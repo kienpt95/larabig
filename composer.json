@@ -35,7 +35,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaraBig\\LaraBigProvider"
+                "Smartosc\\LaraBig\\LaraBigProvider"
             ]
         }
     },
