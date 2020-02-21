@@ -4,6 +4,7 @@
 namespace Smartosc\LaraBig\Contracts\BackendModel;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Http\Requests\AppInstallRequest;
 
 interface StoreInterface
 {
@@ -14,8 +15,9 @@ interface StoreInterface
     public function getStoreHash();
 
     /**
-     * @return mixed
+     * @param $request
+     * @return array
      * @throws GuzzleException
      */
-    public function getInstallData();
+    public function getInstallData($request);
 }

@@ -46,7 +46,7 @@ class LaraBigController
     public function install(AppInstallRequest $request)
     {
         try {
-            if ($storeData = $this->storeModel->getInstallData()) {
+            if ($storeData = $this->storeModel->getInstallData($request)) {
                 $store = $this->storeRepository->create($storeData);
 
                 event(new AppInstall\Success($store));
