@@ -35,6 +35,16 @@ class LaraBigProvider extends ServiceProvider
             }
         );
 
+        $this->app->bind(
+            \Smartosc\LaraBig\Contracts\ApiModel\Catalog::class,
+            \Smartosc\LaraBig\Model\Api\Catalog::class
+        );
+
+        $this->app->bind(
+            \Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product::class,
+            \Smartosc\LaraBig\Model\Api\Catalog\Product::class
+        );
+
         $this->mergeConfigFrom(__DIR__ . '/resources/config/larabig.php', 'larabig');
     }
 
