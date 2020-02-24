@@ -13,14 +13,6 @@ use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 class LaraBig
 {
     private static $allowMethods = ['POST', 'PUT', 'PATCH', 'GET', 'DELETE', 'HEAD'];
-    private static $resources = [
-        'shop',
-        'webhook',
-        'checkout',
-        'page',
-        'order',
-        'customer'
-    ];
 
 
     /**
@@ -61,7 +53,7 @@ class LaraBig
 
     public function call($method, $resource, $data = null, $parameters = null)
     {
-        return 123;
+        return $resource;
         // TODO: make call request
     }
 
@@ -71,16 +63,9 @@ class LaraBig
         if (property_exists($this, $name)) {
             return $this->{$name};
         }
-        #\Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
-        if (in_array($name, self::$resources)) {
-            $namespace = str_replace("_", "", ucwords($name, "_"));
-            $className = '\Smartosc\LaraBig\Contracts\ApiModel\\' . $namespace;
-            $this->{$name} = new $className($this);
-
-            return $this->{$name};
-        }
-
-        return null;
-
+        $namespace = str_replace("_", "", ucwords($name, "_"));
+        $className = 'Smartosc\LaraBig\Contracts\ApiModel\\' . $namespace;
+        $this->{$name} = resolve($className, ['larabig' => $this]);
+        return $this->{$name};
     }
 }

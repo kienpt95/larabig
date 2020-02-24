@@ -5,7 +5,7 @@ namespace Smartosc\LaraBig\Model\Api;
 abstract class AbstractModel
 {
     private $larabig;
-    const CLASS_PREFIX = '\Smartosc\LaraBig\Contracts\ApiModel\\';
+    const CLASS_PREFIX = 'Smartosc\LaraBig\Contracts\ApiModel\\';
     protected $resource = '';
     /**
      * @var string
@@ -16,21 +16,6 @@ abstract class AbstractModel
     {
         $this->larabig = $larabig;
         $this->prefixResource = empty($prefixResource) ? $this->resource : $prefixResource;
-    }
-
-    public function __get($name)
-    {
-        if (property_exists($this, $name)) {
-            return $this->{$name};
-        }
-
-        $classSuffix = $this->serialize($this->resource) . '\\' . $this->serialize($name);
-
-        $className = self::CLASS_PREFIX . $classSuffix;
-        $this->{$name} = new $className($this->larabig, $this->resource);
-        return $this->{$name};
-
-        return null;
     }
 
     private function serialize($name)
@@ -51,5 +36,24 @@ abstract class AbstractModel
         return empty($this->prefixResource)
             ? $this->resource
             : $this->prefixResource . '/' .$this->resource;
+    }
+
+
+    public function __get($name)
+    {
+        if (property_exists($this, $name)) {
+            return $this->{$name};
+        }
+
+        $classSuffix = $this->serialize($this->resource) . '\\' . $this->serialize($name);
+
+        $className = self::CLASS_PREFIX . $classSuffix;
+        $this->{$name} = resolve($className, [
+            'larabig' => $this->larabig,
+            'prefixResource' => $this->resource
+        ]);
+        return $this->{$name};
+
+        return null;
     }
 }
