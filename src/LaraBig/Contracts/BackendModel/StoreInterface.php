@@ -3,8 +3,12 @@
 
 namespace Smartosc\LaraBig\Contracts\BackendModel;
 
-use GuzzleHttp\Exception\GuzzleException;
-
+/**
+ * Interface StoreInterface
+ *
+ * @package Smartosc\LaraBig\Contracts\BackendModel
+ *
+ */
 interface StoreInterface
 {
     public function getDomain();
@@ -14,8 +18,12 @@ interface StoreInterface
     public function getStoreHash();
 
     /**
+     * Install app and get store data
+     *
+     * @param string $code
+     * @param string $scope
+     * @param string $context
      * @return mixed
-     * @throws GuzzleException
      */
-    public function getInstallData();
+    public function getInstallData($code, $scope, $context);
 }

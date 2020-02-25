@@ -9,19 +9,17 @@ return [
     | Useful for multiple apps using the same database instance.
     |
     */
-
     'prefix' => env('LARABIG_PREFIX', 'app'),
 
     /*
-   |--------------------------------------------------------------------------
-   | Client ID Key
-   |--------------------------------------------------------------------------
-   |This value determines the "environment" your application is currently
-   | running in. This may determine how you prefer to configure various
-   | services the application utilizes. Set this in your ".env" file.
-   |
-   */
-    'client_id_key'=>env('BC_APP_CLIENT_ID',null),
+    |--------------------------------------------------------------------------
+    | Client ID
+    |--------------------------------------------------------------------------
+    |
+    | Nothing in your eyes ai ai ai aiiiii
+    |
+    */
+    'client_id' => env('LARABIG_APP_CLIENT_ID', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +30,7 @@ return [
     | services the application utilizes. Set this in your ".env" file.
     |
     */
-    'secret_key'=>env('BC_APP_SECRET',null),
+    'secret_key' => env('LARABIG_APP_SECRET',''),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +40,7 @@ return [
     | note for this config
     |
     */
-    'url_request_token' => 'https://login.bigcommerce.com/oauth2/token',
+    'url_request_token' => env('LARABIG_REQUEST_TOKEN_URL', 'https://login.bigcommerce.com/oauth2/token'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,5 +50,6 @@ return [
     | note for this config
     |
     */
-    'api_url' => 'https://api.bigcommerce.com',
+    'api_url' => env('LARABIG_API_URL', 'https://api.bigcommerce.com'),
+
 ];

@@ -7,56 +7,48 @@ use GuzzleHttp\Exception\GuzzleException;
 use http\Client;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use Bigcommerce\Api\Connection;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Database\Eloquent\Model;
 
-
-class StoreModel implements StoreInterface
+/**
+ * Class StoreModel
+ * @package Smartosc\LaraBig\Model
+ * @method getDomain
+ * @method getAccessToken
+ * @method getStoreHash
+ */
+class StoreModel extends Model implements StoreInterface
 {
-    public function getDomain()
-    {
-        // TODO: Implement getDomain() method.
-    }
-
-    public function getAccessToken()
-    {
-        // TODO: Implement getAccessToken() method.
-    }
-
-    public function getStoreHash()
-    {
-        // TODO: Implement getStoreHash() method.
-    }
-
     /**
      * @inheritDoc
      */
-    public function getInstallData($request)
+    public function getInstallData($code, $scope, $context)
     {
-        // TODO: Implement getInstallData() method.
-        try{
-            $client = app('httpClient');
-            $result = $client->request('POST','https://login.bigcommerce.com/oauth2/token',[
-                'json'=>[
-                    'client_id'=>config('larabig.client_id_key'),
-                    'client_secret'=>config('larabig.secret_key'),
+        /** @var \GuzzleHttp\Client $client */
+        $client = app('httpClient');
+        $result = $client->request(
+            'POST',
+            config('larabig.url_request_token'),
+            [
+                'json' => [
+                    'client_id' => config('larabig.client_id_key'),
+                    'client_secret' => config('larabig.secret_key'),
                     'redirect_uri' => env('APP_URL') . '/auth/install',
                     'grant_type' => 'authorization_code',
-                    'code' => $request->input('code'),
-                    'scope' =>$request->input('scope'),
-                    'context' => $request->input('context'),
+                    'code' => $code,
+                    'scope' => $scope,
+                    'context' => $context,
                 ]
-            ]);
+            ]
+        );
 
-            $statusCode = $result->getStatusCode();
-            if ($statusCode == HttpResponse::HTTP_OK) {
-                $data = json_decode($result->getBody(), true);
-                $data['store_hash'] = str_replace('stores/', '', $data['context']);
-//                $data['store_url'] = 'https://' . $this->getStoreDomain($data);
-                return $data;
-            }
-            return null;
-        }catch (GuzzleException $e) {
-            event(new AppInstall\Failed($e->getMessage()));
+        if ($result->getStatusCode() == Response::HTTP_OK) {
+            $data = json_decode($result->getBody(), true);
+            $data['store_hash'] = str_replace('stores/', '', $data['context']);
+            // @todo get store domain
+            return $data;
         }
+        return null;
     }
 
 }
