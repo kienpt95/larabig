@@ -10,19 +10,10 @@ use Smartosc\LaraBig\Http\Middleware\XFrameAllowAll;
 
 class LaraBigProvider extends ServiceProvider
 {
-    const PREFIX_API_CONTRACT = 'Smartosc\LaraBig\Contracts\ApiModel';
-    const PREFIX_API_MODEL = 'Smartosc\LaraBig\Model\Api';
-
     private $routeMiddleware = [
         'larabig.auth.admin' => ValidatePayload::class,
         'larabig.auth.webhook' => ValidateWebhook::class,
         'larabig.x-frame-all' => XFrameAllowAll::class
-    ];
-
-    private $_apiModelBind = [
-        'catalog' => [
-            'product'
-        ]
     ];
 
     public function boot()
@@ -31,6 +22,8 @@ class LaraBigProvider extends ServiceProvider
         $this->bootViews();
         $this->bootConfig();
         $this->bootDatabase();
+        //        $this->bootJobs();
+        //        $this->bootObservers();
         $this->bootMiddleware();
     }
 
@@ -42,30 +35,17 @@ class LaraBigProvider extends ServiceProvider
             }
         );
 
-        $this->bindApiModel($this->_apiModelBind);
+        $this->app->bind(
+            'Smartosc\LaraBig\Contracts\ApiModel\Catalog',
+            'Smartosc\LaraBig\Model\Api\Catalog'
+        );
+//
+        $this->app->bind(
+            'Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product',
+            'Smartosc\LaraBig\Model\Api\Catalog\Product'
+        );
 
         $this->mergeConfigFrom(__DIR__ . '/resources/config/larabig.php', 'larabig');
-    }
-
-    private function bindApiModel($bindList, $prefix = '') : void {
-        foreach ($bindList as $key => $value)
-        {
-            $item = is_array($value) ? $key : $value;
-            $item = ucwords($item);
-
-            if (!empty($prefix)) {
-                $item = $prefix . '\\' . $item;
-            }
-
-
-            $this->app->bind(
-                self::PREFIX_API_CONTRACT . '\\' . $item,
-                self::PREFIX_API_MODEL . '\\' . $item
-            );
-            if (is_array($value)) {
-                $this->bindApiModel($value, $item);
-            }
-        }
     }
 
     private function bootRoutes() : void

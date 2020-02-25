@@ -33,7 +33,7 @@ abstract class AbstractModel
 
     public function getResource()
     {
-        return empty($this->prefixResource)
+        return empty($this->preixResource)
             ? $this->resource
             : $this->prefixResource . '/' .$this->resource;
     }
