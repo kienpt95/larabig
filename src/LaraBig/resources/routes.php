@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Routing\Route;
-
 Route::group(
     ['prefix' => config('larabig.prefix'), 'middleware' => ['web']], function () {
 
