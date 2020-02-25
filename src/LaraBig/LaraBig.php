@@ -4,6 +4,7 @@ namespace Smartosc\LaraBig;
 
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
+use InvalidArgumentException;
 
 /**
  * Class LaraBig
@@ -51,13 +52,55 @@ class LaraBig
         return $this;
     }
 
+    /**
+     * @param string $method
+     * @param string $resource
+     * @param mixed|null $data
+     * @param mixed|null $parameters
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws InvalidArgumentException
+     * @return mixed
+     */
     public function call($method, $resource, $data = null, $parameters = null)
     {
-        return $resource;
-        // TODO: make call request
+        if (!in_array($method, self::$allowMethods)) {
+            throw new InvalidArgumentException('Method\'s not valid');
+        }
+
+        $options = [
+            'headers' => [
+                'X-Auth-Client' => config('larabig.client_id'),
+                'X-Auth-Token'  => $this->getStore()->getAccessToken(),
+                'Content-Type'  => 'application/json',
+            ],
+            'json' => $data,
+            'query' => $parameters
+        ];
+
+        $response = $this->httpClient->request(
+            $method,
+            $this->uriBuilder($resource, $method),
+            $options
+        );
+
+        return json_decode($response->getBody());
     }
 
-    # LaraBig->catalog->product->all()
+    /**
+     * @param string $resource
+     * @param string $method
+     * @return string
+     */
+    public function uriBuilder($resource, $method)
+    {
+        $uri = config('larabig.api_url') . '/stores/'  . $this->getStoreHash() . '/' . $resource;
+
+        if (($method == 'GET') && strpos($resource, 'v2') !== false) {
+            $uri .= '.json';
+        }
+        return $uri;
+    }
+
     public function __get($name)
     {
         if (property_exists($this, $name)) {
