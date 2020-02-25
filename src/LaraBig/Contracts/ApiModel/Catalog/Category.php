@@ -18,8 +18,7 @@ interface Category
     /**
      * @param $category_id
      * @param $metafield_id
-     * @Returns a single Category Metafield. Optional parameters can be passed in.
-     * @return mixed
+     * @Returns a single Category Metafield
      */
     public function getCategoryMetafield($category_id, $metafield_id);
 
@@ -27,7 +26,6 @@ interface Category
      * @param $category_id
      * @param $data
      * @Creates a Cateory Metafield.
-     * * @return mixed
      */
     public function createCategoryMetafield($category_id, $data);
 
@@ -35,7 +33,6 @@ interface Category
      * @param $category_id
      * @param $metafield_id
      * @Updates a Category Metafield.
-     * * @return mixed
      */
     public function updateCategoryMetafield($category_id, $metafield_id);
 
@@ -43,7 +40,6 @@ interface Category
      * @param $category_id
      * @param $metafield_id
      * @Deletes a Category Metafield.
-     * @return mixed
      */
     public function deleteCategoryMetafield($category_id, $metafield_id);
 

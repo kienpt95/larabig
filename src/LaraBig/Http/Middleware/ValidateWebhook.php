@@ -5,7 +5,8 @@ namespace Smartosc\LaraBig\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class ValidateWebhook
+class
+ValidateWebhook
 {
     public function handle(Request $request, Closure $next)
     {
