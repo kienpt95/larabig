@@ -3,8 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
-<<<<<<< Updated upstream
-=======
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\Address;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\Attribute;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\AttributeValue;
@@ -21,24 +19,10 @@ use Smartosc\LaraBig\Contracts\ApiModel\Customer\FormField;
  * @property FormField form_field
  *
  */
->>>>>>> Stashed changes
 interface Customer
 {
     const PREFIX = 'customers';
     const VERSION = 'v3';
-<<<<<<< Updated upstream
-
-    public function all();
-
-    public function get($id);
-
-    public function create($data);
-
-    public function update($customer_id, $data);
-
-    public function delete($customer_id);
-}
-=======
 
     /**
      * Returns a list of Customers. Optional filter parameters can be passed in.
@@ -74,4 +58,3 @@ interface Customer
      */
     public function delete();
 }
->>>>>>> Stashed changes

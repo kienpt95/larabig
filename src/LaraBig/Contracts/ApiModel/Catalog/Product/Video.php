@@ -3,9 +3,14 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
-
+/**
+ * Interface Video
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
+ */
 interface Video
 {
+    const PREFIX = "videos";
+    const VERESION = "v3";
     /**
      * Get a list of Product Videos.
      * GET /catalog/products/{product_id}/videos

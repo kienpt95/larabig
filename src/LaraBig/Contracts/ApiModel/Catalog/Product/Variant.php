@@ -3,9 +3,16 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
-
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant\Metafield;
+/**
+ * Interface Variant
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
+ * @property Metafield metafield
+ */
 interface Variant
 {
+    const PREFIX = "variants";
+    const VERSION = "v3";
     /**
      * Returns a list of product Variants
      * GET /catalog/products/{product_id}/variants
