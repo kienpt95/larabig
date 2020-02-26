@@ -3,9 +3,15 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
-
+/**
+ * Interface Variant
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog
+ */
 interface Variant
 {
+    const PREFIX = "variants";
+    const VERSION = "v3";
+
     /**
      * Get a list of all variants in your catalog.
      * GET /catalog/variants

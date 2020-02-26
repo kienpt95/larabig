@@ -3,7 +3,15 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand\Image;
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand\Metafield;
 
+/**
+ * Interface Brand
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog
+ * @property Image image
+ * @property Metafield metafield
+ */
 interface Brand
 {
     const PREFIX = "brands";
@@ -23,7 +31,7 @@ interface Brand
      * @param $brand_id
      * @return mixed
      */
-    public function getBrand($brand_id);
+    public function get($brand_id);
 
     /**
      * Create a Brand
@@ -52,71 +60,4 @@ interface Brand
      * @return mixed
      */
     public function delete($brand_id);
-
-    /**
-     * Creates a Brand Image.
-     * POST /catalog/brands/{brand_id}/image
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-images/createbrandimage
-     * @param $brand_id
-     * @param $data
-     * @return mixed
-     */
-    public function createBrandImage($brand_id, $data);
-
-    /**
-     * Deletes a Brand Image.
-     * DELETE /catalog/brands/{brand_id}/image
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-images/deletebrandimage
-     * @param $brand_id
-     * @return mixed
-     */
-    public function deleteBrandImage($brand_id);
-
-    /**
-     * Get a list of Brand Metafields
-     * GET /catalog/brands/{brand_id}/metafields
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/getbrandmetafieldsbybrandid
-     * @return mixed
-     */
-    public function allMetaFields();
-
-    /**
-     * Get a Brand Metafield
-     * GET /catalog/brands/{brand_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/getbrandmetafieldbybrandid
-     * @param $brand_id
-     * @param $metafield_id
-     * @return mixed
-     */
-    public function getMetafield($brand_id, $metafield_id);
-
-    /**
-     * Creates a Brand Metafield.
-     * POST /catalog/brands/{brand_id}/metafields
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/createbrandmetafield
-     * @param $brand_id
-     * @param $data
-     * @return mixed
-     */
-    public function createBrandMEtaField($brand_id, $data);
-
-    /**
-     * Updates a Brand Metafield.
-     * PUT /catalog/brands/{brand_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/updatebrandmetafield
-     * @param $brand_id
-     * @param $metafield_id
-     * @return mixed
-     */
-    public function updateBrandMEtaField($brand_id, $metafield_id);
-
-    /**
-     * Deletes a Brand Metafield.
-     * DELETE /catalog/brands/{brand_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/deletebrandmetafieldbyid
-     * @param $brand_id
-     * @param $metafield_id
-     * @return mixed
-     */
-    public function deleteBrandMEtaField($brand_id, $metafield_id);
 }
