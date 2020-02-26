@@ -1,7 +1,9 @@
 <?php
 
-Route::group(
-    ['prefix' => config('larabig.prefix'), 'middleware' => ['web']], function () {
+Route::middleware(['web','larabig.x-frame-all'])
+    ->namespace('Smartosc\LaraBig\Http\Controllers')
+    ->prefix(config('larabig.prefix'))
+    ->group(function () {
 
         /*
         |---------------------------------------------------
@@ -11,7 +13,7 @@ Route::group(
         */
         Route::get(
             'install',
-            'Smartosc\LaraBig\Http\Controllers\LaraBigController@install'
+            'LaraBigController@install'
         )->middleware('larabig.x-frame-all')->name('larabig.install');
 
         /*
@@ -22,7 +24,7 @@ Route::group(
         */
         Route::get(
             'load',
-            'Smartosc\LaraBig\Http\Controllers\LaraBigController@load'
+            'LaraBigController@load'
         )->middleware('larabig.auth.admin')->name('larabig.load');
 
         /*
@@ -33,7 +35,7 @@ Route::group(
         */
         Route::get(
             'uninstall',
-            'Smartosc\LaraBig\Http\Controllers\LaraBigController@uninstall'
+            'LaraBigController@uninstall'
         )->middleware('larabig.auth.admin')->name('larabig.uninstall');
     }
 );

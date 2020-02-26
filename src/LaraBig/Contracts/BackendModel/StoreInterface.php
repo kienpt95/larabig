@@ -11,11 +11,6 @@ namespace Smartosc\LaraBig\Contracts\BackendModel;
  */
 interface StoreInterface
 {
-    public function getDomain();
-
-    public function getAccessToken();
-
-    public function getStoreHash();
 
     /**
      * Install app and get store data

@@ -17,8 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method getAccessToken
  * @method getStoreHash
  */
-class StoreModel extends Model implements StoreInterface
+class Store extends Model implements StoreInterface
 {
+    protected $fillable = ['store_hash', 'access_token'];
+
     /**
      * @inheritDoc
      */
@@ -31,9 +33,9 @@ class StoreModel extends Model implements StoreInterface
             config('larabig.url_request_token'),
             [
                 'json' => [
-                    'client_id' => config('larabig.client_id_key'),
+                    'client_id' => config('larabig.client_id'),
                     'client_secret' => config('larabig.secret_key'),
-                    'redirect_uri' => env('APP_URL') . '/auth/install',
+                    'redirect_uri' => config('app.url') . '/' . config('larabig.prefix') .'/install',
                     'grant_type' => 'authorization_code',
                     'code' => $code,
                     'scope' => $scope,
