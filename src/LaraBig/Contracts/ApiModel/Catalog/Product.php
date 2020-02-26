@@ -37,20 +37,20 @@ interface Product
      * Update a product
      * PUT /catalog/products/{product_id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/products/updateproduct
-     * @param $id
+     * @param $product_id
      * @param $data
      * @return mixed
      */
-    public function update($id, $data);
+    public function update($product_id, $data);
 
     /**
      * Deletes a Product
      * DELETE /catalog/products/{product_id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/products/deleteproductbyid
-     * @param $id
+     * @param $product_id
      * @return mixed
      */
-    public function delete($id);
+    public function delete($product_id);
 
     /**
      * Get a list of Bulk Pricing Rules
@@ -59,7 +59,7 @@ interface Product
      * @param $product_id
      * @return mixed
      */
-    public function  getAllBulkPricingRules($product_id);
+    public function getAllBulkPricingRules($product_id);
 
     /**
      * Creates a Bulk Pricing Rule.
@@ -150,7 +150,7 @@ interface Product
      * @param $data
      * return mixed
      */
-    public function DeleteComplexRule($product_id, $complex_rule_id , $data);
+    public function deleteComplexRule($product_id, $complex_rule_id , $data);
 
     /**
      * Get a list of product Custom Fields.
@@ -444,7 +444,7 @@ interface Product
      * @param $option_id
      * @return mixed
      */
-    public function  getOption($product_id, $option_id);
+    public function getOption($product_id, $option_id);
 
     /**
      * Creates a Variant Option.
@@ -569,55 +569,6 @@ interface Product
      */
     public function deleteReview($product_id, $review_id);
 
-    /**
-     * Returns a list of product Variants
-     * GET /catalog/products/{product_id}/variants
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
-     * @param $product_id
-     * @return mixed
-     */
-    public function getAllVariants($product_id);
-
-    /**
-     * Get a single product Variant
-     * GET /catalog/products/{product_id}/variants/{variant_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
-     * @param $product_id
-     * @param $variant_id
-     * @return mixed
-     */
-    public function getVariant($product_id, $variant_id);
-
-    /**
-     * Creates a Product Variant.
-     * POST /catalog/products/{product_id}/variants
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
-     * @param $product_id
-     * @param $data
-     * @return mixed
-     */
-    public function createVariant($product_id, $data);
-
-    /**
-     * Updates a product Variant.
-     * PUT /catalog/products/{product_id}/variants/{variant_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/updatevariant
-     * @param $product_id
-     * @param $variant_id
-     * @param $data
-     * @return mixed
-     */
-    public function updateVariant($product_id, $variant_id, $data);
-
-    /**
-     * Deletes a product Variant.
-     * DELETE /catalog/products/{product_id}/variants/{variant_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/deletevariantbyid
-     * @param $product_id
-     * @param $variant_id
-     * @return mixed
-     */
-    public function deleteVariant($product_id, $variant_id);
 
     /**
      * Creates a Variant Image.
@@ -631,60 +582,6 @@ interface Product
     public function createVariantImage($product_id, $variant_id, $data);
 
     /**
-     * Get a list of product variant Metafields.
-     * GET /catalog/products/{product_id}/variants/{variant_id}/metafields
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/getvariantmetafieldsbyproductidandvariantid
-     * @param $product_id
-     * @param $variant_id
-     * @return mixed
-     */
-    public function getAllVariantMetafields($product_id, $variant_id);
-
-    /**
-     * Get a single product variant Metafield.
-     * GET /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/getvariantmetafieldbyproductidandvariantid
-     * @param $product_id
-     * @param $variant_id
-     * @param $metafield_id
-     * @return mixed
-     */
-    public function getVariantMetafields($product_id, $variant_id, $metafield_id);
-
-    /**
-     * Creates a product variant Metafield.
-     * POST /catalog/products/{product_id}/variants/{variant_id}/metafields
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/createvariantmetafield
-     * @param $product_id
-     * @param $variant_id
-     * @param $data
-     * @return mixed
-     */
-    public function createVariantMetafield($product_id, $variant_id, $data);
-
-    /**
-     * Updates a product variant Metafield.
-     * PUT /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/updatevariantmetafield
-     * @param $product_id
-     * @param $variant_id
-     * @param $metafield_id
-     * @param $data
-     * @return mixed
-     */
-    public function  updateVariantMetafield($product_id, $variant_id,$metafield_id, $data);
-    /**
-     * Deletes a product variant Metafield.
-     * DELETE /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/deletevariantmetafieldbyid
-     * @param $product_id
-     * @param $variant_id
-     * @param $metafield_id
-     * @return mixed
-     */
-    public function  deleteVariantMetafield($product_id, $variant_id,$metafield_id);
-
-    /**
      * Updates a Variant Option.
      * PUT /catalog/products/{product_id}/options/{option_id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/deletevariantmetafieldbyid
@@ -693,56 +590,6 @@ interface Product
      * @param $data
      * @return mixed
      */
-    public function  updateOption($product_id, $option_id, $data);
-
-    /**
-     * Get a list of Product Videos.
-     * GET /catalog/products/{product_id}/videos
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/deletevariantmetafieldbyid
-     * @param $product_id
-     * @return mixed
-     */
-    public function getAllVideos($product_id);
-
-    /**
-     * Returns a single Product Video.
-     * GET /catalog/products/{product_id}/videos/{id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-videos/getproductvideobyid
-     * @param $product_id
-     * @param $id
-     * @return mixed
-     */
-    public function  getVideo($product_id, $id);
-
-    /**
-     * Creates a Product Video.
-     * POST /catalog/products/{product_id}/videos
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-videos/getproductvideobyid
-     * @param $product_id
-     * @param $data
-     * @return mixed
-     */
-    public function createVideo($product_id, $data);
-
-    /**
-     * Updates a *Product Video.
-     * PUT /catalog/products/{product_id}/videos/{id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-videos/getproductvideobyid
-     * @param $product_id
-     * @param $video_id
-     * @param $data
-     * @return mixed
-     */
-    public function updateVideo($product_id, $video_id, $data);
-
-    /**
-     * Deletes a Product Video.
-     * DELETE /catalog/products/{product_id}/videos/{id}
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-videos/deleteproductvideo
-     * @param $product_id
-     * @param $video_id
-     * @return mixed
-     */
-    public function deleteVideo($product_id, $video_id);
+    public function updateOption($product_id, $option_id, $data);
 
 }

@@ -11,5 +11,5 @@ interface Summary
      * GET /catalog/summary
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/summary/getcatalogsummary
      */
-    public function getACatalogSummary();
+    public function get();
 }
