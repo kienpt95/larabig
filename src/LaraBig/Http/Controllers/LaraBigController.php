@@ -48,9 +48,9 @@ class LaraBigController
         try {
             $storeData = $this->storeModel->getInstallData
             (
-                $request->getCode(),
-                $request->getScope(),
-                $request->getContext()
+                $request->code,
+                $request->scope,
+                $request->context
             );
 
             if ($storeData) {
@@ -62,11 +62,11 @@ class LaraBigController
             }
         } catch (GuzzleException $e) {
             event(new AppInstall\Failed($e->getMessage()));
+            return view('larabig::error')->withError($e->getMessage());
         } catch (\Exception $e) {
             event(new AppInstall\Failed($e->getMessage()));
+            return view('larabig::error')->withError($e->getMessage());
         }
-
-        return view('larabig::error');
     }
 
     public function uninstall()

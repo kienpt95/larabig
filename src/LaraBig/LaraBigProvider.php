@@ -42,8 +42,19 @@ class LaraBigProvider extends ServiceProvider
             }
         );
 
-        $this->bindApiModel($this->_apiModelBind);
+        $this->app->bind(
+            'Smartosc\LaraBig\Contracts\BackendModel\StoreInterface',
+            'Smartosc\LaraBig\Model\Store'
+        );
 
+        $this->app->bind(
+            'Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface',
+            function () {
+                return new \Smartosc\LaraBig\Repository\StoreRepository();
+            }
+        );
+
+        $this->bindApiModel($this->_apiModelBind);
         $this->mergeConfigFrom(__DIR__ . '/resources/config/larabig.php', 'larabig');
     }
 
