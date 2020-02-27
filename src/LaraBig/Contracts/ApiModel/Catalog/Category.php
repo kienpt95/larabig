@@ -4,59 +4,65 @@
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
 
+
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Image;
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Metafield;
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Tree;
+
+/**
+ * Interface Category
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog
+ * @property Tree tree
+ * @property Image image
+ * @property Metafield metafield
+ */
 interface Category
 {
     const PREFIX = "categories";
     const VERSION = "v3";
 
     /**
-     * @param $category_id
-     * @Returns a list of Metafields on a Category. Optional filter parameters can be passed in.
-     */
-    public function allCategoryMetafield($category_id);
-
-    /**
-     * @param $category_id
-     * @param $metafield_id
-     * @Returns a single Category Metafield. Optional parameters can be passed in.
+     * Get  a list of Categories
+     * GET /catalog/categories
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/getcategories
      * @return mixed
      */
-    public function getCategoryMetafield($category_id, $metafield_id);
+    public function all();
 
     /**
+     * Get a single Category. 
+     * GET /catalog/categories/{category_id}
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/getcategorybyid
+     * @param $category_id
+     * @return mixed
+     */
+    public function getCategory($category_id);
+
+    /**
+     * Create a Category
+     * POST /catalog/categories
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/createcategory
+     * @param $data
+     * @return mixed
+     */
+    public function create( $data);
+
+    /**
+     * Updates a Category.
+     * PUT /catalog/categories/{category_id}
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/updatecategory
      * @param $category_id
      * @param $data
-     * @Creates a Cateory Metafield.
-     * * @return mixed
-     */
-    public function createCategoryMetafield($category_id, $data);
-
-    /**
-     * @param $category_id
-     * @param $metafield_id
-     * @Updates a Category Metafield.
-     * * @return mixed
-     */
-    public function updateCategoryMetafield($category_id, $metafield_id);
-
-    /**
-     * @param $category_id
-     * @param $metafield_id
-     * @Deletes a Category Metafield.
      * @return mixed
      */
-    public function deleteCategoryMetafield($category_id, $metafield_id);
-
+    public function update($category_id, $data);
+    
     /**
+     * Delete a category
+     * DELETE /catalog/categories/{category_id}
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/deletecategorybyid
      * @param $category_id
      * @return mixed
      */
-    public function createCategoryImage($category_id);
-
-    /**
-     * @param $category_id
-     * @return mixed
-     */
-    public function deleteCategoryImage($category_id);
-
+    public function delete($category_id);
 }
