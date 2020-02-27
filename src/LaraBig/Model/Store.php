@@ -3,19 +3,13 @@
 
 namespace Smartosc\LaraBig\Model;
 
-use GuzzleHttp\Exception\GuzzleException;
-use http\Client;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
-use Bigcommerce\Api\Connection;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class StoreModel
  * @package Smartosc\LaraBig\Model
- * @method getDomain
- * @method getAccessToken
- * @method getStoreHash
  */
 class Store extends Model implements StoreInterface
 {
@@ -53,4 +47,21 @@ class Store extends Model implements StoreInterface
         return null;
     }
 
+    /** @inheritDoc */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /** @inheritDoc */
+    public function getAccessToken()
+    {
+        return $this->access_token;
+    }
+
+    /** @inheritDoc */
+    public function getStoreHash()
+    {
+        return $this->store_hash;
+    }
 }

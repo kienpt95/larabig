@@ -7,6 +7,8 @@ abstract class AbstractModel
     private $larabig;
     const CLASS_PREFIX = 'Smartosc\LaraBig\Contracts\ApiModel\\';
     protected $resource = '';
+    protected $version = 'v3';
+
     /**
      * @var string
      */
@@ -31,11 +33,13 @@ abstract class AbstractModel
         return $this->larabig;
     }
 
-    public function getResource()
+    public function getResource($version = 'v3')
     {
-        return empty($this->prefixResource)
+        $resource = empty($this->prefixResource)
             ? $this->resource
             : $this->prefixResource . '/' .$this->resource;
+
+        return $version . '/' . $resource;
     }
 
 

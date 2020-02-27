@@ -93,7 +93,7 @@ class LaraBig
      */
     public function uriBuilder($resource, $method)
     {
-        $uri = config('larabig.api_url') . '/stores/'  . $this->getStoreHash() . '/' . $resource;
+        $uri = config('larabig.api_url') . '/stores/'  . $this->getStore()->getStoreHash() . '/' . $resource;
 
         if (($method == 'GET') && strpos($resource, 'v2') !== false) {
             $uri .= '.json';
