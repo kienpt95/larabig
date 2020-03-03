@@ -35,6 +35,19 @@ Route::middleware(['web','larabig.x-frame-all'])
             'uninstall',
             'LaraBigController@uninstall'
         )->middleware('larabig.auth.admin')->name('larabig.uninstall');
+
+        /*
+        |---------------------------------------------------
+        | Remove user Route
+        |---------------------------------------------------
+        |
+        */
+        if (config('larabig.enable-multi-user', false)) {
+            Route::get(
+                'remove-user',
+                'LaraBigController@removeUser'
+            )->middleware('larabig.auth.admin')->name('larabig.remove-user');
+        }
     }
 );
 

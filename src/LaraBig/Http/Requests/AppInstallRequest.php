@@ -19,7 +19,7 @@ class AppInstallRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorrize()
+    public function authorize()
     {
         return true;
     }
@@ -32,9 +32,9 @@ class AppInstallRequest extends FormRequest
     public function rules()
     {
         return [
-            'code'=>'required',
-            'scope'=>'required',
-            'context'=>'required',
+            'code' => 'required',
+            'scope' => 'required',
+            'context' => 'required',
         ];
     }
 

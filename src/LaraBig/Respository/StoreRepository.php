@@ -9,20 +9,22 @@ use Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface;
 class StoreRepository implements StoreRepositoryInterface
 {
 
-    /**
-     * Save store into database
-     *
-     * @param array $installData
-     * @return null| Store
-     */
+    /** @inheritDoc */
     public function create($installData)
     {
         #todo implement log
+        /** @var Store $store */
         $store = Store::firstOrNew([
             'store_hash' => $installData['store_hash']
         ]);
         $store->fill($installData);
         $store->saveOrFail();
         return $store;
+    }
+
+    /** @inheritDoc */
+    public function getByStoreHash($store_hash)
+    {
+        // TODO: Implement getByStoreHash() method.
     }
 }
