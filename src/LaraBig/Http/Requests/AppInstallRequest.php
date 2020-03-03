@@ -4,9 +4,16 @@ namespace Smartosc\LaraBig\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class AppInstallRequest
+ * @package Smartosc\LaraBig\Http\Requests
+ *
+ * @property $code
+ * @property $scope
+ * @property $context
+ */
 class AppInstallRequest extends FormRequest
 {
-    //todo validate request
     /**
      * Determine if the user is authorized to make this request.
      *
