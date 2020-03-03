@@ -12,4 +12,10 @@ interface StoreRepositoryInterface
      * @return StoreInterface
      */
     public function create($installData);
+
+    /**
+     * @param string $store_hash
+     * @return StoreInterface
+     */
+    public function getByStoreHash($store_hash);
 }

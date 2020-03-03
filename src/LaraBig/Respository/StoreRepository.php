@@ -3,18 +3,14 @@
 
 namespace Smartosc\LaraBig\Repository;
 
+use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use Smartosc\LaraBig\Model\Store;
 use Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface;
 
 class StoreRepository implements StoreRepositoryInterface
 {
 
-    /**
-     * Save store into database
-     *
-     * @param array $installData
-     * @return null| Store
-     */
+    /** @inheritDoc */
     public function create($installData)
     {
         #todo implement log
@@ -24,5 +20,11 @@ class StoreRepository implements StoreRepositoryInterface
         $store->fill($installData);
         $store->saveOrFail();
         return $store;
+    }
+
+    /** @inheritDoc */
+    public function getByStoreHash($store_hash)
+    {
+        // TODO: Implement getByStoreHash() method.
     }
 }
