@@ -18,22 +18,30 @@ class Product extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiMo
 
     public function get($id)
     {
-        // TODO: Implement get() method.
+        $resource = $this->getResource() . '/' . $id;
+        $result = $this->service()->call('GET', $resource);
+        return $result;
     }
 
     public function create($data)
     {
-        // TODO: Implement create() method.
+        $resource = $this->getResource();
+        $result = $this->service()->call('GET', $resource, $data);
+        return $result;
     }
 
     public function update($id, $data)
     {
-        // TODO: Implement update() method.
+        $resource = $this->getResource() . '/' . $id;
+        $result = $this->service()->call('GET', $resource, $data);
+        return $result;
     }
 
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        $resource = $this->getResource() . '/' . $id;
+        $result = $this->service()->call('DELETE', $resource);
+        return $result;
     }
 
     /**

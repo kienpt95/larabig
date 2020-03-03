@@ -1,24 +1,24 @@
 <?php
 
+namespace Smartosc\LaraBig\Model\Api\Catalog\Product;
 
-namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
+use Smartosc\LaraBig\Model\Api\AbstractModel;
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Image as ImageInterface;
 
-/**
- * Interface Image
- * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
- */
-interface Image
+class Image  extends AbstractModel implements ImageInterface
 {
-    const PREFIX = "{product_id}/images";
-    const VERSION = "v3";
-    /**
-     * GET a list of Product Images.
-     * GET /catalog/products/{product_id}/images
-     * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-images/getproductimages
-     * @param $product_id
-     * @return mixed
-     */
-    public function all($product_id);
+    protected $resource = "{product_id}/images";
+
+    /** @inheritDoc */
+    public function all($product_id)
+    {
+        $result = $this->service()->call('GET', $this->getResource(
+            [
+                'product_id' => $product_id
+            ])
+        );
+        return $result;
+    }
 
     /**
      * Get a single Product Image
@@ -28,7 +28,10 @@ interface Image
      * @param $image_id
      * @return mixed
      */
-    public function get($product_id, $image_id);
+    public function get($product_id, $image_id)
+    {
+        // TODO: Implement get() method.
+    }
 
     /**
      * Creates a Product Image.
@@ -38,7 +41,10 @@ interface Image
      * @param $data
      * @return mixed
      */
-    public function create($product_id, $data);
+    public function create($product_id, $data)
+    {
+        // TODO: Implement create() method.
+    }
 
     /**
      * Updates a Product Image
@@ -49,7 +55,10 @@ interface Image
      * @param $data
      * @return mixed
      */
-    public function update($product_id, $image_id, $data);
+    public function update($product_id, $image_id, $data)
+    {
+        // TODO: Implement update() method.
+    }
 
     /**
      * Deletes a Product Image.
@@ -59,5 +68,8 @@ interface Image
      * @param $image_id
      * @return mixed
      */
-    public function delete($product_id, $image_id);
+    public function delete($product_id, $image_id)
+    {
+        // TODO: Implement delete() method.
+    }
 }

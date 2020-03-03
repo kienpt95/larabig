@@ -5,19 +5,18 @@ namespace Smartosc\LaraBig\Model\Api;
 abstract class AbstractModel
 {
     private $larabig;
-    const CLASS_PREFIX = 'Smartosc\LaraBig\Contracts\ApiModel\\';
     protected $resource = '';
     protected $version = 'v3';
 
     /**
      * @var string
      */
-    protected $prefixResource;
+    protected $lastResource;
 
-    public function __construct($larabig, $prefixResource = '')
+    public function __construct($larabig, $lastResource = '')
     {
         $this->larabig = $larabig;
-        $this->prefixResource = empty($prefixResource) ? $this->resource : $prefixResource;
+        $this->lastResource = $lastResource;
     }
 
     private function serialize($name)
@@ -33,15 +32,15 @@ abstract class AbstractModel
         return $this->larabig;
     }
 
-    public function getResource($version = 'v3')
+    public function getResource($data = [], $version = 'v3')
     {
-        $resource = empty($this->prefixResource)
+        $resource = empty($this->lastResource)
             ? $this->resource
-            : $this->prefixResource . '/' .$this->resource;
+            : $this->lastResource . '/' . $this->resource;
 
+        // @todo: phase data to resource
         return $version . '/' . $resource;
     }
-
 
     public function __get($name)
     {
@@ -49,15 +48,19 @@ abstract class AbstractModel
             return $this->{$name};
         }
 
-        $classSuffix = $this->serialize($this->resource) . '\\' . $this->serialize($name);
+        $className = get_class($this) . '\\' . $this->serialize($name);
+        if (class_exists($className)) {
 
-        $className = self::CLASS_PREFIX . $classSuffix;
-        $this->{$name} = resolve($className, [
-            'larabig' => $this->larabig,
-            'prefixResource' => $this->resource
-        ]);
-        return $this->{$name};
+            $lastResource = empty($this->lastResource)
+                ? $this->resource
+                : $this->lastResource . '/' . $this->resource;
 
+            $this->{$name} = resolve($className, [
+                'larabig' => $this->larabig,
+                'lastResource' => $lastResource
+            ]);
+            return $this->{$name};
+        }
         return null;
     }
 }

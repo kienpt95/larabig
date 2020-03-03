@@ -2,6 +2,14 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Image;
+
+/**
+ * Interface Product
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog
+ *
+ * @property Image image
+ */
 interface Product
 {
     const PREFIX = 'products';

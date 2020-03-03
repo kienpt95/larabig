@@ -4,7 +4,6 @@ Route::middleware(['web','larabig.x-frame-all'])
     ->namespace('Smartosc\LaraBig\Http\Controllers')
     ->prefix(config('larabig.prefix'))
     ->group(function () {
-
         /*
         |---------------------------------------------------
         | Install App Route
