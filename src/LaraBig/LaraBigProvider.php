@@ -25,6 +25,17 @@ class LaraBigProvider extends ServiceProvider
         ]
     ];
 
+    private $_contractBind = [
+        [
+            'Smartosc\LaraBig\Contracts\BackendModel\StoreInterface',
+            'Smartosc\LaraBig\Model\Store'
+        ],
+        [
+            'Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface',
+            'Smartosc\LaraBig\Repository\StoreRepository'
+        ],
+    ];
+
     public function boot()
     {
         $this->bootRoutes();
@@ -41,19 +52,7 @@ class LaraBigProvider extends ServiceProvider
                 return new GuzzleClient();
             }
         );
-
-        $this->app->bind(
-            'Smartosc\LaraBig\Contracts\BackendModel\StoreInterface',
-            'Smartosc\LaraBig\Model\Store'
-        );
-
-        $this->app->bind(
-            'Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface',
-            function () {
-                return new \Smartosc\LaraBig\Repository\StoreRepository();
-            }
-        );
-
+        $this->bindContract();
         $this->bindApiModel($this->_apiModelBind);
         $this->mergeConfigFrom(__DIR__ . '/resources/config/larabig.php', 'larabig');
     }
@@ -131,6 +130,15 @@ class LaraBigProvider extends ServiceProvider
     {
         foreach ($this->routeMiddleware as $key => $middleware) {
             $this->app['router']->aliasMiddleware($key, $middleware);
+        }
+    }
+
+    private function bindContract()
+    {
+        foreach ($this->_contractBind as $bind) {
+            if (isset($bind[0]) && isset($bind[1])) {
+                $this->app->bind($bind[0], $bind[1]);
+            }
         }
     }
 }
