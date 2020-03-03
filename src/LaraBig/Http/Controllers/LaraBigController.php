@@ -75,7 +75,7 @@ class LaraBigController
                     $this->adminRepository->create($userData);
                 }
                 event(new AppInstall\Success($store));
-
+                DB::commit();
                 return view('larabig::success');
             }
         } catch (GuzzleException $e) {
