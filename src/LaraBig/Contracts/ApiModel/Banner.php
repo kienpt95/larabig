@@ -3,9 +3,12 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
+use Smartosc\LaraBig\Contracts\ApiModel\Banner\Count;
+
 /**
  * Interface Banner
  * @package Smartosc\LaraBig\Contracts\ApiModel
+ * @property Count count
  */
 interface Banner
 {
@@ -57,11 +60,4 @@ interface Banner
      */
     public function delete($id);
 
-    /**
-     * Returns a count of Banners.
-     * GET /banners/count
-     * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/getacountofbanners
-     * @return mixed
-     */
-    public function count();
 }

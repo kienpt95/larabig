@@ -47,9 +47,10 @@ interface Metafield
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-metafields/updateproductmetafield
      * @param $product_id
      * @param $metafield_id
+     * @param $data
      * @return mixed
      */
-    public function update($product_id, $metafield_id);
+    public function update($product_id, $metafield_id, $data);
 
     /**
      * Deletes a Product Metafield

@@ -12,9 +12,10 @@ interface Metafield
      * Get a list of Brand Metafields
      * GET /catalog/brands/{brand_id}/metafields
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/getbrandmetafieldsbybrandid
+     * @param $brand_id
      * @return mixed
      */
-    public function all();
+    public function all($brand_id);
 
     /**
      * Get a Brand Metafield
@@ -44,7 +45,7 @@ interface Metafield
      * @param $metafield_id
      * @return mixed
      */
-    public function update($brand_id, $metafield_id);
+    public function update($brand_id, $metafield_id, $data);
 
     /**
      * Deletes a Brand Metafield.

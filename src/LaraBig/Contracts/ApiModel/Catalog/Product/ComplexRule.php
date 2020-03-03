@@ -55,8 +55,7 @@ interface ComplexRule
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-complex-rules/deletecomplexrulebyid
      * @param $product_id
      * @param $complex_rule_id
-     * @param $data
      * return mixed
      */
-    public function delete($product_id, $complex_rule_id , $data);
+    public function delete($product_id, $complex_rule_id);
 }

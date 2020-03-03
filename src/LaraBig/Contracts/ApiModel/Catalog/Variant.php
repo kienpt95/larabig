@@ -27,5 +27,5 @@ interface Variant
      * @param $data
      * @return mixed
      */
-    public function updateVariants($data);
+    public function update($data);
 }

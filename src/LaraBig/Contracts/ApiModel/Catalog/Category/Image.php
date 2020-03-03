@@ -15,9 +15,10 @@ interface Image
      * POST /catalog/categories/{category_id}/image
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category-images/createcategoryimage
      * @param $category_id
+     * @param $data
      * @return mixed
      */
-    public function create($category_id);
+    public function create($category_id,$data);
 
     /**
      * Deletes a Cateogory Image.

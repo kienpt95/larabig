@@ -30,13 +30,13 @@ interface Category
     public function all();
 
     /**
-     * Get a single Category. 
+     * Get a single Category.
      * GET /catalog/categories/{category_id}
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category/getcategorybyid
      * @param $category_id
      * @return mixed
      */
-    public function getCategory($category_id);
+    public function get($category_id);
 
     /**
      * Create a Category
@@ -56,7 +56,7 @@ interface Category
      * @return mixed
      */
     public function update($category_id, $data);
-    
+
     /**
      * Delete a category
      * DELETE /catalog/categories/{category_id}
