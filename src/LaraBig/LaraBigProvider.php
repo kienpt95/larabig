@@ -34,6 +34,10 @@ class LaraBigProvider extends ServiceProvider
             'Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface',
             'Smartosc\LaraBig\Repository\StoreRepository'
         ],
+        [
+            'Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface',
+            'Smartosc\LaraBig\Repository\AdminRepository'
+        ],
     ];
 
     public function boot()
@@ -136,9 +140,7 @@ class LaraBigProvider extends ServiceProvider
     private function bindContract()
     {
         foreach ($this->_contractBind as $bind) {
-            if (isset($bind[0]) && isset($bind[1])) {
-                $this->app->bind($bind[0], $bind[1]);
-            }
+            $this->app->bind($bind[0], $bind[1]);
         }
     }
 }

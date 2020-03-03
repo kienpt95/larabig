@@ -12,8 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Admin extends Model
 {
-    protected $table = 'store_admins';
 
-    protected $fillable = ['store_hash', 'admin_id', 'admin_email', 'role_id'];
+    protected $fillable = ['store_hash', 'bc_id', 'email'];
 
 }

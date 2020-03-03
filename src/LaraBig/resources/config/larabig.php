@@ -25,12 +25,22 @@ return [
     |--------------------------------------------------------------------------
     | Secret Key
     |--------------------------------------------------------------------------
-    |This value determines the "environment" your application is currently
+    | This value determines the "environment" your application is currently
     | running in. This may determine how you prefer to configure various
     | services the application utilizes. Set this in your ".env" file.
     |
     */
     'secret_key' => env('LARABIG_APP_SECRET',''),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Multi user support
+    |--------------------------------------------------------------------------
+    | enabling multi-user support will allow store admins to
+    | manually authorize users – other than the store owner – to load the app
+    |
+    */
+    'enable-multi-user' => env('LARABIG_ENABLE_MULTI_USER',false),
 
     /*
     |--------------------------------------------------------------------------

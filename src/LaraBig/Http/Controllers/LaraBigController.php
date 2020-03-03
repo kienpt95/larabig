@@ -9,6 +9,9 @@ use Smartosc\LaraBig\Events\AppInstall;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\View\View;
+use Smartosc\LaraBig\Helper\LaraBig;
+use Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface;
+use Illuminate\Support\Facades\DB;
 
 class LaraBigController
 {
@@ -20,13 +23,19 @@ class LaraBigController
      * @var StoreRepositoryInterface
      */
     private $storeRepository;
+    /**
+     * @var AdminRepositoryInterface
+     */
+    private $adminRepository;
 
     public function __construct(
         StoreModelInterface $storeModel,
-        StoreRepositoryInterface $storeRepository
+        StoreRepositoryInterface $storeRepository,
+        AdminRepositoryInterface $adminRepository
     ) {
         $this->storeModel = $storeModel;
         $this->storeRepository = $storeRepository;
+        $this->adminRepository = $adminRepository;
     }
 
     /**
@@ -46,16 +55,25 @@ class LaraBigController
     public function install(AppInstallRequest $request)
     {
         try {
-            $storeData = $this->storeModel->getInstallData
-            (
-                $request->code,
-                $request->scope,
-                $request->context
-            );
+            $storeData = $this->storeModel
+                ->getInstallData(
+                    $request->code,
+                    $request->scope,
+                    $request->context
+                );
 
             if ($storeData) {
+                DB::beginTransaction();
                 $store = $this->storeRepository->create($storeData);
 
+                if (LaraBig::isEnabledMultiUser()) {
+                    $userData = [
+                        'email' => $storeData['user']['email'],
+                        'bc_id' => $storeData['user']['id'],
+                        'store_hash' => $storeData['store_hash']
+                    ];
+                    $this->adminRepository->create($userData);
+                }
                 event(new AppInstall\Success($store));
 
                 return view('larabig::success');
@@ -64,6 +82,7 @@ class LaraBigController
             event(new AppInstall\Failed($e->getMessage()));
             return view('larabig::error')->withError($e->getMessage());
         } catch (\Exception $e) {
+            DB::rollBack();
             event(new AppInstall\Failed($e->getMessage()));
             return view('larabig::error')->withError($e->getMessage());
         }
