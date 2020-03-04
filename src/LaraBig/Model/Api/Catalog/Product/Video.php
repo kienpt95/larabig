@@ -17,8 +17,8 @@ class Video extends AbstractModel implements VideoInterface
      */
     public function all($product_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id
         ]));
         return $result;
     }
@@ -28,9 +28,9 @@ class Video extends AbstractModel implements VideoInterface
      */
     public function get($product_id, $id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'id'=>$id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'id' => $id
         ]));
         return $result;
     }
@@ -40,9 +40,9 @@ class Video extends AbstractModel implements VideoInterface
      */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
+        $result = $this->service()->call('POST', $this->getResource([
             'product_id'=>$product_id
-        ]),$data);
+        ]), $data);
         return $result;
     }
 
@@ -52,9 +52,9 @@ class Video extends AbstractModel implements VideoInterface
     public function update($product_id, $id, $data)
     {
         $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'id'=>$id
-        ]),$data);
+            'product_id' => $product_id,
+            'id' => $id
+        ]), $data);
         return $result;
     }
 
@@ -63,9 +63,9 @@ class Video extends AbstractModel implements VideoInterface
      */
     public function delete($product_id, $id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'id'=>$id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'id' => $id
         ]));
         return $result;
     }

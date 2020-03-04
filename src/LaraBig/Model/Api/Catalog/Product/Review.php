@@ -14,8 +14,8 @@ class Review extends AbstractModel implements ReviewInterface
      */
     public function all($product_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id
         ]));
         return $result;
     }
@@ -25,9 +25,9 @@ class Review extends AbstractModel implements ReviewInterface
      */
     public function get($product_id, $review_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'review_id'=>$review_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'review_id' => $review_id
         ]));
         return $result;
     }
@@ -37,9 +37,9 @@ class Review extends AbstractModel implements ReviewInterface
      */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
-        ]),$data);
+        $result = $this->service()->call('POST', $this->getResource([
+            'product_id' => $product_id
+        ]), $data);
         return $result;
     }
 
@@ -48,10 +48,10 @@ class Review extends AbstractModel implements ReviewInterface
      */
     public function update($product_id, $review_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'review_id'=>$review_id
-        ]),$data);
+        $result = $this->service()->call('PUT', $this->getResource([
+            'product_id' => $product_id,
+            'review_id' => $review_id
+        ]), $data);
         return $result;
     }
 
@@ -60,9 +60,9 @@ class Review extends AbstractModel implements ReviewInterface
      */
     public function delete($product_id, $review_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'review_id'=>$review_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'review_id' => $review_id
         ]));
         return $result;
     }

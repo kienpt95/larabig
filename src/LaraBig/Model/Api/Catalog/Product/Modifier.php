@@ -14,8 +14,8 @@ class Modifier extends AbstractModel implements ModifierInterface
      */
     public function all($product_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id
         ]));
         return $result;
     }
@@ -25,9 +25,9 @@ class Modifier extends AbstractModel implements ModifierInterface
      */
     public function get($product_id, $modifier_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'modifier_id'=>$modifier_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'modifier_id' => $modifier_id
         ]));
         return $result;
     }
@@ -37,9 +37,9 @@ class Modifier extends AbstractModel implements ModifierInterface
      */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
-        ]),$data);
+        $result = $this->service()->call('POST', $this->getResource([
+            'product_id' => $product_id
+        ]), $data);
         return $result;
     }
 
@@ -48,9 +48,9 @@ class Modifier extends AbstractModel implements ModifierInterface
      */
     public function update($product_id, $modifier_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'modifier_id'=>$modifier_id
+        $result = $this->service()->call('PUT', $this->getResource([
+            'product_id' => $product_id,
+            'modifier_id' => $modifier_id
         ]),$data);
 
         return $result;
@@ -61,9 +61,9 @@ class Modifier extends AbstractModel implements ModifierInterface
      */
     public function delete($product_id, $modifier_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'modifier_id'=>$modifier_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'modifier_id' => $modifier_id
         ]));
         return $result;
     }

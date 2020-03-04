@@ -14,8 +14,8 @@ class Option extends AbstractModel implements  OptionInterface
      */
     public function all($product_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id
         ]));
         return $result;
     }
@@ -25,9 +25,9 @@ class Option extends AbstractModel implements  OptionInterface
      */
     public function get($product_id, $option_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id
         ]));
         return $result;
     }
@@ -37,9 +37,9 @@ class Option extends AbstractModel implements  OptionInterface
      */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
-        ]),$data);
+        $result = $this->service()->call('POST', $this->getResource([
+            'product_id' => $product_id
+        ]), $data);
         return $result;
     }
 
@@ -49,9 +49,9 @@ class Option extends AbstractModel implements  OptionInterface
     public function update($product_id, $option_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
-        ]),$data);
+            'product_id' => $product_id,
+            'option_id' => $option_id
+        ]), $data);
         return $result;
     }
 
@@ -60,9 +60,9 @@ class Option extends AbstractModel implements  OptionInterface
      */
     public function delete($product_id, $option_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id
         ]));
         return $result;
     }

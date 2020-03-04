@@ -15,9 +15,9 @@ class Value extends AbstractModel implements ValueInterface
      */
     public function all($product_id, $option_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id
         ]));
         return $result;
     }
@@ -27,10 +27,10 @@ class Value extends AbstractModel implements ValueInterface
      */
     public function get($product_id, $option_id, $value_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
-            ,'value_id'=>$value_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id,
+            'value_id' => $value_id
         ]));
         return $result;
     }
@@ -40,9 +40,9 @@ class Value extends AbstractModel implements ValueInterface
      */
     public function create($product_id, $option_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
+        $result = $this->service()->call('POST', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id
         ]),$data);
         return  $result;
     }
@@ -53,10 +53,10 @@ class Value extends AbstractModel implements ValueInterface
     public function update($product_id, $option_id, $value_id, $data)
     {
         $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
-            ,'value_id'=>$value_id
-        ]),$data);
+            'product_id' => $product_id,
+            'option_id' => $option_id,
+            'value_id' => $value_id
+        ]), $data);
         return $result;
     }
 
@@ -65,10 +65,10 @@ class Value extends AbstractModel implements ValueInterface
      */
     public function delete($product_id, $option_id, $value_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'option_id'=>$option_id
-            ,'value_id'=>$value_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'option_id' => $option_id,
+            'value_id' => $value_id
         ]));
         return $result;
     }

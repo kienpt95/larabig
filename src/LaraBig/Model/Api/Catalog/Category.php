@@ -14,7 +14,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
       */
      public function all()
      {
-         $result = $this->service()->call('GET',$this->getResource());
+         $result = $this->service()->call('GET', $this->getResource());
          return $result;
      }
 
@@ -32,7 +32,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
       */
      public function create($data)
      {
-         $result = $this->service()->call('POST',$this->getResource(),$data);
+         $result = $this->service()->call('POST', $this->getResource(),$data);
          return $result;
      }
 

@@ -15,7 +15,7 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function all()
     {
-        $result = $this->service()->call('GET',$this->getResource());
+        $result = $this->service()->call('GET', $this->getResource());
         return $result;
     }
 
@@ -24,7 +24,7 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function get($brand_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
+        $result = $this->service()->call('GET', $this->getResource([
             'brand_id'=>$brand_id
         ]));
         return $result;
@@ -35,7 +35,7 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function create($data)
     {
-        $result = $this->service()->call('POST',$this->getResource(),$data);
+        $result = $this->service()->call('POST', $this->getResource(), $data);
         return $result;
     }
 
@@ -44,8 +44,8 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function update($brand_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
-            'brand_id'
+        $result = $this->service()->call('PUT', $this->getResource([
+            'brand_id' => $brand_id
         ]),$data);
         return $result;
     }
@@ -55,7 +55,7 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function delete($brand_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource(['brand_id'=>$brand_id]));
+        $result = $this->service()->call('DELETE', $this->getResource(['brand_id' => $brand_id]));
         return $result;
     }
 }

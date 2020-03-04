@@ -15,8 +15,8 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function all($product_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id
         ]));
         return $result;
     }
@@ -26,9 +26,9 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function get($product_id, $variant_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id
         ]));
         return $result;
     }
@@ -39,8 +39,8 @@ class Variant extends AbstractModel implements VariantInterface
     public function create($product_id, $data)
     {
         $result = $this->service()->call('POST',$this->getResource([
-            'product_is'=>$product_id
-        ]),$data);
+            'product_is' => $product_id
+        ]), $data);
         return $result;
     }
 
@@ -49,10 +49,10 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function update($product_id, $variant_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
-        ]),$data);
+        $result = $this->service()->call('PUT', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id
+        ]), $data);
         return $result;
     }
 
@@ -61,9 +61,9 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function delete($product_id, $variant_id)
     {
-        $result = $this->resource->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
+        $result = $this->resource->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id
         ]));
         return $result;
     }

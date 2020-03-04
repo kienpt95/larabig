@@ -25,8 +25,8 @@ class Image  extends AbstractModel implements ImageInterface
     public function get($product_id, $image_id)
     {
         $result = $this->service()->call('GET', $this->getResource([
-            'product_id'=>$product_id,
-            'image_id'=>$image_id,
+            'product_id' => $product_id,
+            'image_id' => $image_id,
         ]));
         return $result;
     }
@@ -34,30 +34,30 @@ class Image  extends AbstractModel implements ImageInterface
     /** @inheritDoc */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
+        $result = $this->service()->call('POST', $this->getResource([
+            'product_id' => $product_id
 
-        ],$data));
+        ], $data));
         return $result;
     }
 
     /** @inheritDoc */
     public function update($product_id, $image_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
-            'product_id'=>$product_id
-            ,'image_id'=>$image_id
+        $result = $this->service()->call('PUT', $this->getResource([
+            'product_id' => $product_id,
+            'image_id' => $image_id
 
-        ],$data));
+        ], $data));
         return $result;
     }
 
     /** @inheritDoc */
     public function delete($product_id, $image_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'image_id'=>$image_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'image_id' => $image_id
         ]));
         return $result;
     }
