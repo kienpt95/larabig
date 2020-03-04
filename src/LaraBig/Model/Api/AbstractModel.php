@@ -38,7 +38,10 @@ abstract class AbstractModel
             ? $this->resource
             : $this->lastResource . '/' . $this->resource;
 
-        // @todo: phase data to resource
+        if (!empty($data)) {
+            $resource = preg_replace_array('/{[a-z_]+}/', $data, $resource);
+        }
+
         return $version . '/' . $resource;
     }
 
