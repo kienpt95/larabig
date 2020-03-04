@@ -21,7 +21,9 @@ class LaraBigProvider extends ServiceProvider
 
     private $_apiModelBind = [
         'catalog' => [
-            'product'
+            'product' => [
+                'image'
+            ]
         ]
     ];
 

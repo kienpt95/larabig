@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\BackendModel;
 
+use Smartosc\LaraBig\Exceptions\AppInstallException;
+
 /**
  * Interface StoreInterface
  *
@@ -32,7 +34,8 @@ interface StoreInterface
      * @param string $code
      * @param string $scope
      * @param string $context
-     * @return mixed
+     * @return array
+     * @throws AppInstallException
      */
     public function getInstallData($code, $scope, $context);
 }

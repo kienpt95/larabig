@@ -2,6 +2,7 @@
 
 namespace Smartosc\LaraBig\Http\Controllers;
 
+use Smartosc\LaraBig\Exceptions\AppInstallException;
 use Smartosc\LaraBig\Http\Requests\AppInstallRequest;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface as StoreModelInterface;
 use Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface;
@@ -62,8 +63,7 @@ class LaraBigController
                     $request->context
                 );
 
-            if ($storeData) {
-                DB::beginTransaction();
+            DB::beginTransaction();
                 $store = $this->storeRepository->create($storeData);
 
                 if (LaraBig::isEnabledMultiUser()) {
@@ -75,21 +75,32 @@ class LaraBigController
                     $this->adminRepository->create($userData);
                 }
                 event(new AppInstall\Success($store));
-                DB::commit();
+            DB::commit();
+
+                $request->session()->put('');
+                //TODO set login session
+
                 return view('larabig::success');
-            }
-        } catch (GuzzleException $e) {
+
+        } catch (AppInstallException $e) {
+            DB::rollBack();
             event(new AppInstall\Failed($e->getMessage()));
             return view('larabig::error')->withError($e->getMessage());
         } catch (\Exception $e) {
             DB::rollBack();
             event(new AppInstall\Failed($e->getMessage()));
-            return view('larabig::error')->withError($e->getMessage());
+            return view('larabig::error')
+                ->withError('Whoops, looks like something went wrong.');
         }
     }
 
     public function uninstall()
     {
         //todo uninstall app
+    }
+
+    public function removeUser()
+    {
+
     }
 }
