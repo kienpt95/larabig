@@ -53,7 +53,7 @@ class Banner extends AbstractModel implements BannerInterface
      */
     public function delete($id)
     {
-        $result = $this->service()->call('DELETE', $this->getResource([
+        $result = $this->service()->call('DELETE',      $this->getResource([
             'id' => $id
         ]));
         return $result;
