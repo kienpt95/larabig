@@ -68,7 +68,7 @@ class LaraBigProvider extends ServiceProvider
     {
         foreach ($bindList as $key => $value) {
             $item = is_array($value) ? $key : $value;
-            $item = ucwords($item);
+            $item = ucwords($item, "_");
 
             if (!empty($prefix)) {
                 $item = $prefix . '\\' . $item;
