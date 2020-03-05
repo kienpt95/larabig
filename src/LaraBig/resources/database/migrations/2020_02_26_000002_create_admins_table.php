@@ -14,23 +14,21 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        if (LaraBig::isEnabledMultiUser()) {
-            Schema::create('admins', function (Blueprint $table) {
-                $table->bigIncrements('id');
-                $table->string('store_hash');
-                $table->integer('bc_id')->index();
-                $table->string('email')->index();
-                $table->rememberToken();
-                $table->timestamps();
+        Schema::create('admins', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('store_hash');
+            $table->integer('bc_id')->index();
+            $table->string('email')->index();
+            $table->rememberToken();
+            $table->timestamps();
 
-                $table->foreign('store_hash')
-                    ->references('store_hash')
-                    ->on('stores')
-                    ->onDelete('CASCADE');
+            $table->foreign('store_hash')
+                ->references('store_hash')
+                ->on('stores')
+                ->onDelete('CASCADE');
 
-                $table->unique(['store_hash', 'email']);
-            });
-        }
+            $table->unique(['store_hash', 'email']);
+        });
     }
 
     /**

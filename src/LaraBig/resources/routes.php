@@ -49,6 +49,11 @@ Route::middleware(['web','larabig.x-frame-all'])
                 'LaraBigController@removeUser'
             )->middleware('larabig.auth.admin')->name('larabig.remove-user');
         }
+
+        Route::post(
+            'logout',
+            'LaraBigController@logout'
+        )->name('larabig.logout');
     }
 );
 

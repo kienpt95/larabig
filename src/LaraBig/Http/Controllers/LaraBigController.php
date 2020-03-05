@@ -77,14 +77,13 @@ class LaraBigController
             DB::beginTransaction();
             $store = $this->storeRepository->create($storeData);
 
-            if (LaraBig::isEnabledMultiUser()) {
-                $userData = [
-                    'email' => $storeData['user']['email'],
-                    'bc_id' => $storeData['user']['id'],
-                    'store_hash' => $storeData['store_hash']
-                ];
-                $this->adminRepository->create($userData);
-            }
+            $userData = [
+                'email' => $storeData['user']['email'],
+                'bc_id' => $storeData['user']['id'],
+                'store_hash' => $storeData['store_hash']
+            ];
+            $admin = $this->adminRepository->create($userData);
+
             event(new Events\AppInstall\Success($store));
             DB::commit();
 
@@ -113,5 +112,11 @@ class LaraBigController
     public function removeUser()
     {
 
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return true;
     }
 }
