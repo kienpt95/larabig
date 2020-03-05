@@ -21,20 +21,19 @@ interface AttributeValue
      * Upserts Customer Attribute Values. Updates the attribute values on the Customer. Multiple customer attribute values can be updated in one call
      * Upsert checks for an existing record. If there is none, it creates the record, if there is a matching record, it updates that record.
      * Up to 10 per call are allowed.
+     * PUT /customers/attribute-values
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attribute-values/customersattributevaluesput
-     * @param $customer_id
-     * @param $customer_attribute_id
-     * @param $value
+     * @param $arr
      * @return mixed
      */
-    public function  upsert($customer_id, $customer_attribute_id, $value);
+    public function  upsert($arr);
 
     /**
      * Deletes Customer Attribute Values. Deletes the attribute value from the customer.
      * DELETE /customers/attribute-values
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attribute-values/customersattributevaluesdelete
-     * @param $customer_attribute_value_id
+     * @param $ids
      * @return mixed
      */
-    public function delete($customer_attribute_value_id);
+    public function delete($ids);
 }

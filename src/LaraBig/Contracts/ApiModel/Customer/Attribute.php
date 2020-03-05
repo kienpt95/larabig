@@ -34,7 +34,7 @@ interface Attribute
      * @param $data
      * @return mixed
      */
-    public function update($id_customer_atribute, $data);
+    public function update($data);
 
     /**
      * Deletes Customer Attributes from the store.
@@ -43,5 +43,5 @@ interface Attribute
      * @param $id_customer_atribute
      * @return mixed
      */
-    public function delete($id_customer_atribute);
+    public function delete($ids);
 }

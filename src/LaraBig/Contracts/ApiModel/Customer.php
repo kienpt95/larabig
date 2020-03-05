@@ -54,7 +54,8 @@ interface Customer
      * Deletes Customers.
      * DELETE /customers
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customers/customersdelete
+     * @param $ids
      * @return mixed
      */
-    public function delete();
+    public function delete($ids);
 }

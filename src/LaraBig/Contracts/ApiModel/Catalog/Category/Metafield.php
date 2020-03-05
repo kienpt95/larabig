@@ -41,9 +41,10 @@ interface Metafield
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/category-metafields/updatecategorymetafield
      * @param $category_id
      * @param $metafield_id
+     * @param $data
      * @return mixed
      */
-    public function update($category_id, $metafield_id);
+    public function update($category_id, $metafield_id, $data);
 
     /**
      * Deletes a Category Metafield.

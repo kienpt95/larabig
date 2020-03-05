@@ -3,33 +3,46 @@
 
 namespace Smartosc\LaraBig\Model\Api;
 
+use Smartosc\LaraBig\Contracts\ApiModel\Customer as Icustomer;
 
-class Customer extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiModel\Customer
+class Customer extends AbstractModel implements Icustomer
 {
     protected $resource = "customers";
 
+    /**
+     * @inheritDoc
+     */
     public function all()
     {
-        // TODO: Implement all() method.
+        $result = $this->service()->call('GET', $this->getResource());
+        return $result;
     }
 
-    public function get($id)
-    {
-        // TODO: Implement get() method.
-    }
-
+    /**
+     * @inheritDoc
+     */
     public function create($data)
     {
-        // TODO: Implement create() method.
+        $result = $this->service()->call('POST', $this->getResource(), $data);
+        return $result;
     }
 
-    public function update($customer_id, $data)
+    /**
+     * @inheritDoc
+     */
+    public function update($data)
     {
-        // TODO: Implement update() method.
+        $result = $this->service()->call('PUT', $this->getResource(), $data);
+        return $result;
     }
 
-    public function delete($customer_id)
+    /**
+     * @inheritDoc
+     */
+    public function delete($ids)
     {
-        // TODO: Implement delete() method.
+        $result = $this->service()->call('DELETE', $this->service(), null, [
+            'ids:in' => explode(",", $ids)
+        ]);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant;
+namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
 /**
  * Interface BulkPricingRule

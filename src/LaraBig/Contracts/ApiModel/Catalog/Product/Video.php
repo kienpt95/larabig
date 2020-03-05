@@ -45,11 +45,11 @@ interface Video
      * PUT /catalog/products/{product_id}/videos/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-videos/getproductvideobyid
      * @param $product_id
-     * @param $video_id
+     * @param $id
      * @param $data
      * @return mixed
      */
-    public function update($product_id, $video_id, $data);
+    public function update($product_id, $id, $data);
 
     /**
      * Deletes a Product Video.
@@ -59,5 +59,5 @@ interface Video
      * @param $video_id
      * @return mixed
      */
-    public function delete($product_id, $video_id);
+    public function delete($product_id, $id);
 }
