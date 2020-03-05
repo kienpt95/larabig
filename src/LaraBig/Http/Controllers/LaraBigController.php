@@ -9,7 +9,6 @@ use Smartosc\LaraBig\Events;
 use \Smartosc\LaraBig\Http\Requests;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\View\View;
-use Smartosc\LaraBig\Helper\LaraBig;
 use Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 
@@ -104,9 +103,21 @@ class LaraBigController
         }
     }
 
-    public function uninstall()
+    /**
+     * @param $request
+     * @return mixed
+     */
+    public function uninstall($request)
     {
-        //todo uninstall app
+        try {
+            /** @var \Smartosc\LaraBig\Model\Store|\Smartosc\LaraBig\Contracts\BackendModel\StoreInterface $store */
+            $store = 'TODO get store';
+            $store->delete();
+            event(new Events\Uninstall($store));
+        } catch (\Exception $e) {
+            return view('larabig::error')
+                ->withError('Whoops, looks like something went wrong.');
+        }
     }
 
     public function removeUser()
