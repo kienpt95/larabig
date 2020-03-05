@@ -18,7 +18,7 @@ interface Image
      * @param $data
      * @return mixed
      */
-    public function create($category_id,$data);
+    public function create($category_id, $data);
 
     /**
      * Deletes a Cateogory Image.

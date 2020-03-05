@@ -4,6 +4,7 @@
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant\Metafield;
+
 /**
  * Interface Variant
  * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
@@ -62,5 +63,4 @@ interface Variant
      * @return mixed
      */
     public function delete($product_id, $variant_id);
-
 }

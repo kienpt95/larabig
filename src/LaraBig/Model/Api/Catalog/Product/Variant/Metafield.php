@@ -55,7 +55,7 @@ class Metafield extends AbstractModel implements MetafieldInterface
             'product_id'=>$product_id
             ,'variant_id'=>$variant_id
             ,'metafield_id'=>$metafield_id
-        ]),$data);
+        ]), $data);
         return $result;
     }
 

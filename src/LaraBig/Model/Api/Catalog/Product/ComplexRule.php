@@ -3,12 +3,11 @@
 
 namespace Smartosc\LaraBig\Model\Api\Catalog\Product;
 
-
 use Smartosc\LaraBig\Model\Api\AbstractModel;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\ComplexRule as ComplexRuleInterface;
+
 class ComplexRule extends AbstractModel implements ComplexRuleInterface
 {
-
     protected $resource = "{product_id}/complex-rules";
     /**
      * @inheritDoc

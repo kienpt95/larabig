@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
-
 interface FormField
 {
     const PREFIX = "form-field-values";

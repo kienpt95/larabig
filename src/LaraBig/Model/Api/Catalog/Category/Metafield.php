@@ -6,8 +6,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog\Category;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Metafield as MetafieldInterface;
 use Smartosc\LaraBig\Model\Api\AbstractModel;
 
-
-class Metafield extends  AbstractModel implements  MetafieldInterface
+class Metafield extends AbstractModel implements MetafieldInterface
 {
     protected $resource = "{category_id}/metafields";
     /**
@@ -52,7 +51,7 @@ class Metafield extends  AbstractModel implements  MetafieldInterface
         $result = $this->service()->call('PUT', $this->getResource([
             'category_id' => $category_id,
             'metafield_id' => $metafield_id
-        ]) ,$data);
+        ]), $data);
         return $result;
     }
 

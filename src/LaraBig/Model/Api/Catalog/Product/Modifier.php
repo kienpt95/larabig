@@ -51,7 +51,7 @@ class Modifier extends AbstractModel implements ModifierInterface
         $result = $this->service()->call('PUT', $this->getResource([
             'product_id' => $product_id,
             'modifier_id' => $modifier_id
-        ]),$data);
+        ]), $data);
 
         return $result;
     }

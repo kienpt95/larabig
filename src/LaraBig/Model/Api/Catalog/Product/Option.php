@@ -6,7 +6,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog\Product;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Option as OptionInterface;
 use Smartosc\LaraBig\Model\Api\AbstractModel;
 
-class Option extends AbstractModel implements  OptionInterface
+class Option extends AbstractModel implements OptionInterface
 {
     protected $resource = "{product_id}/options";
     /**

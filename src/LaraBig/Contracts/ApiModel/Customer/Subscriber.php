@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
-
 interface Subscriber
 {
     const PREFIX = "subcribers";

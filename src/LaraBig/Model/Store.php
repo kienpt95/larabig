@@ -49,8 +49,7 @@ class Store extends Model implements StoreInterface
                 // @todo get store domain
                 return $data;
             } else {
-                throw new \Exception
-                (
+                throw new \Exception(
                     __('Install Failed with status code :code', ['code' => $result->getStatusCode()])
                 );
             }

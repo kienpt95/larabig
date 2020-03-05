@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order\ShippingAddress;
 
-
 interface ShippingQuotes
 {
     const PREFIX = "shipping_quotes";

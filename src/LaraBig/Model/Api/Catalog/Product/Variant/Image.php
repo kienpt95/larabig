@@ -6,8 +6,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog\Product\Variant;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant\Image as ImageInterface;
 use Smartosc\LaraBig\Model\Api\AbstractModel;
 
-
-class Image extends AbstractModel implements  ImageInterface
+class Image extends AbstractModel implements ImageInterface
 {
     protected $resource = "{variant_id}/image";
     /**
@@ -15,7 +14,7 @@ class Image extends AbstractModel implements  ImageInterface
      */
     public function create($product_id, $variant_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
+        $result = $this->service()->call('POST', $this->getResource([
             'product_id' => $product_id,
             'variant_id' => $variant_id
         ]), $data);

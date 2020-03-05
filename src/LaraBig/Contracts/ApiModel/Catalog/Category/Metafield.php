@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category;
 
-
 interface Metafield
 {
     /**
@@ -55,6 +54,4 @@ interface Metafield
      * @return mixed
      */
     public function delete($category_id, $metafield_id);
-
-
 }

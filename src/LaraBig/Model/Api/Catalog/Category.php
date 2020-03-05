@@ -2,12 +2,13 @@
 
 
 namespace Smartosc\LaraBig\Model\Api\Catalog;
+
  use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category as CategoryInterface;
  use Smartosc\LaraBig\Model\Api\AbstractModel;
 
  class Category extends AbstractModel implements CategoryInterface
-{
-    protected $resource = "categories";
+ {
+     protected $resource = "categories";
 
      /**
       * @inheritDoc
@@ -32,7 +33,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
       */
      public function create($data)
      {
-         $result = $this->service()->call('POST', $this->getResource(),$data);
+         $result = $this->service()->call('POST', $this->getResource(), $data);
          return $result;
      }
 

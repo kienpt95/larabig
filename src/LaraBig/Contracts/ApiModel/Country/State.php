@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Country;
 
-
 interface State
 {
     const PREFIX = "states";

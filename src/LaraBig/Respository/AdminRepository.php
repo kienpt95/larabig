@@ -1,6 +1,7 @@
 <?php
 
 namespace Smartosc\LaraBig\Repository;
+
 use Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface;
 use Smartosc\LaraBig\Model\Admin;
 

@@ -12,7 +12,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Admin extends Model
 {
-
     protected $fillable = ['store_hash', 'bc_id', 'email'];
-
 }

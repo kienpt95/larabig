@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
-
 interface Tax
 {
     const PREFIX = "taxex";
@@ -17,5 +16,4 @@ interface Tax
      * @return mixed
      */
     public function all($order_id);
-
 }

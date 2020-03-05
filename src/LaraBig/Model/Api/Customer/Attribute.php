@@ -42,8 +42,8 @@ class Attribute extends AbstractModel implements IAttribute
      */
     public function delete($ids)
     {
-        $result = $this->service()->call('DELETE', $this->getResource(), null,[
-            'id:in' => implode(",",$ids)
+        $result = $this->service()->call('DELETE', $this->getResource(), null, [
+            'id:in' => implode(",", $ids)
         ]);
         return $result;
     }

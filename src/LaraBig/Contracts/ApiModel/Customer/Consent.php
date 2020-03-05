@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
-
 interface Consent
 {
     const PREFIX = "consent";
@@ -26,5 +25,5 @@ interface Consent
      * @param $data
      * @return mixed
      */
-    public function update($customerId,$data);
+    public function update($customerId, $data);
 }

@@ -2,6 +2,7 @@
 
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
+
 use Smartosc\LaraBig\Contracts\ApiModel\Order\ShippingAddress\ShippingQuotes;
 
 /**

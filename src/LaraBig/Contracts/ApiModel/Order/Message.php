@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
-
 interface Message
 {
     const PREFIX = "messages";

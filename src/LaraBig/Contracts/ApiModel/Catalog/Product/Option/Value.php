@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Option;
 
-
 interface Value
 {
     const PREFIX = "values";
@@ -50,7 +49,7 @@ interface Value
      * @param $data
      * @return mixed
      */
-    public function update($product_id, $option_id,$value_id, $data);
+    public function update($product_id, $option_id, $value_id, $data);
 
     /**
      * Deletes a Variant Option Value.

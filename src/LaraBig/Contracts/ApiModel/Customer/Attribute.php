@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
-
 interface Attribute
 {
     const PREFIX = "attributes";

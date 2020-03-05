@@ -54,7 +54,8 @@ class LaraBigProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(
-            'httpClient', function ($app) {
+            'httpClient',
+            function ($app) {
                 return new GuzzleClient();
             }
         );
@@ -63,9 +64,9 @@ class LaraBigProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/resources/config/larabig.php', 'larabig');
     }
 
-    private function bindApiModel($bindList, $prefix = '') : void {
-        foreach ($bindList as $key => $value)
-        {
+    private function bindApiModel($bindList, $prefix = '') : void
+    {
+        foreach ($bindList as $key => $value) {
             $item = is_array($value) ? $key : $value;
             $item = ucwords($item);
 

@@ -44,5 +44,4 @@ class AppInstallRequest extends FormRequest
             'required' => 'Not enough information was passed to install this app.'
         ];
     }
-
 }

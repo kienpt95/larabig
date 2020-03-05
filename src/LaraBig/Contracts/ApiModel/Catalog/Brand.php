@@ -45,7 +45,7 @@ interface Brand
     /**
      * Update a Brand
      * PUT /catalog/brands/{brand_id}
-     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brands/updatebrand 
+     * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brands/updatebrand
      * @param $brand_id
      * @param $data
      * @return mixed

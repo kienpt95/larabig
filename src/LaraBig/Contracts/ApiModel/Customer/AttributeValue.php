@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
-
 interface AttributeValue
 {
     const PREFIX = "attribute-values";
@@ -26,7 +25,7 @@ interface AttributeValue
      * @param $arr
      * @return mixed
      */
-    public function  upsert($arr);
+    public function upsert($arr);
 
     /**
      * Deletes Customer Attribute Values. Deletes the attribute value from the customer.

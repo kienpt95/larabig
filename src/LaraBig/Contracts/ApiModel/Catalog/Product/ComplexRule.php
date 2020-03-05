@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
-
 interface ComplexRule
 {
     const PREFIX = "complex-rules";
@@ -36,7 +35,7 @@ interface ComplexRule
      * @param $data
      * @return  mixed
      */
-    public function  create($product_id, $data);
+    public function create($product_id, $data);
 
     /**
      * Updates a product Complex Rule.
@@ -47,7 +46,7 @@ interface ComplexRule
      * @param $data
      * @return mixed
      */
-    public function update($product_id, $complex_rule_id , $data);
+    public function update($product_id, $complex_rule_id, $data);
 
     /**
      * Deletes a product Complex Rule.

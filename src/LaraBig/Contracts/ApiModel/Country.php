@@ -39,6 +39,4 @@ interface Country
      * @return mixed
      */
     public function count();
-
-
 }

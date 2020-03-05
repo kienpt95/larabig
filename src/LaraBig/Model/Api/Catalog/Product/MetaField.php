@@ -53,7 +53,7 @@ class MetaField extends AbstractModel implements MetaFieldInterface
         $result = $this->service()->call('PUT', $this->getResource([
             'product_id' => $product_id,
             'metafield_id' => $metafield_id
-        ]),$data);
+        ]), $data);
 
         return $result;
     }

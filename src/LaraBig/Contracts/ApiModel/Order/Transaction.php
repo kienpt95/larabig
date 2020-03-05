@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
-
 interface Transaction
 {
     const PREFIX = "transactions";

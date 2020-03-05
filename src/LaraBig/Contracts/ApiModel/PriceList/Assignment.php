@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\PriceList;
 
-
 interface Assignment
 {
     const PREFIX = "assignments";

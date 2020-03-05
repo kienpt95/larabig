@@ -2,6 +2,7 @@
 
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
+
 use Smartosc\LaraBig\Contracts\ApiModel\PriceList\Assignment;
 use Smartosc\LaraBig\Contracts\ApiModel\PriceList\Record;
 

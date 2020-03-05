@@ -20,5 +20,4 @@ use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Variant;
  */
 interface Catalog
 {
-
 }

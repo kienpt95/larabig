@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Shipping\Carrier;
 
-
 interface Connection
 {
     const PREFIX = "connection";

@@ -45,7 +45,7 @@ interface Value
      * @param $data
      * @return mixed
      */
-    public function create($product_id, $modifier_id,$data);
+    public function create($product_id, $modifier_id, $data);
 
     /**
      * Update a Modifier Value

@@ -2,6 +2,7 @@
 
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
+
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Coupon;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Message;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Product;
@@ -80,6 +81,4 @@ interface Order
      * @return mixed
      */
     public function count();
-
-
 }

@@ -38,7 +38,7 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function create($product_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
+        $result = $this->service()->call('POST', $this->getResource([
             'product_is' => $product_id
         ]), $data);
         return $result;

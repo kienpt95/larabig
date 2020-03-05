@@ -51,6 +51,5 @@ class ValidatePayload
         } catch (\Exception $e) {
             return response('Failed to validate request', \Illuminate\Http\Response::HTTP_NOT_ACCEPTABLE);
         }
-
     }
 }

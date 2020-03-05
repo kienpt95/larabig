@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Payment;
 
-
 interface Method
 {
     const PREFIX = "methods";

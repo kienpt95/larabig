@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Modifier\Value;
 
-
 interface Image
 {
     const PREFIX = "image";

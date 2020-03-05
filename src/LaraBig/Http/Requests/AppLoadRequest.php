@@ -39,5 +39,4 @@ class AppLoadRequest extends FormRequest
             'required' => 'Please load app from BigCommerce manage dashboard.'
         ];
     }
-
 }

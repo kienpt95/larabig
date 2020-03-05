@@ -30,7 +30,7 @@ return [
     | services the application utilizes. Set this in your ".env" file.
     |
     */
-    'secret_key' => env('LARABIG_APP_SECRET',''),
+    'secret_key' => env('LARABIG_APP_SECRET', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
     | manually authorize users – other than the store owner – to load the app
     |
     */
-    'enable-multi-user' => env('LARABIG_ENABLE_MULTI_USER',false),
+    'enable-multi-user' => env('LARABIG_ENABLE_MULTI_USER', false),
 
     /*
     |--------------------------------------------------------------------------

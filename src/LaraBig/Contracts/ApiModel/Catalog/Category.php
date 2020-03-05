@@ -3,8 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
-
-
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Image;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Metafield;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Category\Tree;
@@ -45,7 +43,7 @@ interface Category
      * @param $data
      * @return mixed
      */
-    public function create( $data);
+    public function create($data);
 
     /**
      * Updates a Category.

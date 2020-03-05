@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand;
 
-
 interface Metafield
 {
     const PREFIX = "metafields";

@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Payment;
 
-
 interface AccessToken
 {
     const PREFIX = "access_tokens";

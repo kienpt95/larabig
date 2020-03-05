@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
-
 interface Coupon
 {
     const PREFIX = "coupons";
@@ -16,5 +15,4 @@ interface Coupon
      * @return mixed
      */
     public function all($order_id);
-
 }

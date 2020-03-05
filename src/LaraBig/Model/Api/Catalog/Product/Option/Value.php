@@ -43,7 +43,7 @@ class Value extends AbstractModel implements ValueInterface
         $result = $this->service()->call('POST', $this->getResource([
             'product_id' => $product_id,
             'option_id' => $option_id
-        ]),$data);
+        ]), $data);
         return  $result;
     }
 
@@ -52,7 +52,7 @@ class Value extends AbstractModel implements ValueInterface
      */
     public function update($product_id, $option_id, $value_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
+        $result = $this->service()->call('PUT', $this->getResource([
             'product_id' => $product_id,
             'option_id' => $option_id,
             'value_id' => $value_id

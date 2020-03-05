@@ -41,8 +41,8 @@ class Address extends AbstractModel implements IAddress
      */
     public function delete($ids)
     {
-        $result = $this->service()->call('DELETE', $this->getResource(), null,[
-            'id:in' => implode(",",$ids)
+        $result = $this->service()->call('DELETE', $this->getResource(), null, [
+            'id:in' => implode(",", $ids)
         ]);
         return $result;
     }

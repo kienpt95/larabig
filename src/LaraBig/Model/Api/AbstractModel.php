@@ -53,7 +53,6 @@ abstract class AbstractModel
 
         $className = get_class($this) . '\\' . $this->serialize($name);
         if (class_exists($className)) {
-
             $lastResource = empty($this->lastResource)
                 ? $this->resource
                 : $this->lastResource . '/' . $this->resource;

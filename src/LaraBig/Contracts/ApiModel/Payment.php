@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
-
 interface Payment
 {
     const PREFIX = "payments";

@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
-
 interface CustomerGroup
 {
     const PREFIX = "customer_groups";
@@ -33,7 +32,7 @@ interface CustomerGroup
      * @param $data
      * @return mixed
      */
-    public function  create($data);
+    public function create($data);
 
     /**
      * Updates a Customer Group.

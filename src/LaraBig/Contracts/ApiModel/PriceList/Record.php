@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\PriceList;
 
-
 interface Record
 {
     const PREFIX = "records";
@@ -45,7 +44,7 @@ interface Record
      * @param $variant_id
      * @return mixed
      */
-    public function  getByVariant($price_list_id, $variant_id);
+    public function getByVariant($price_list_id, $variant_id);
 
     /**
      * Returns a Price List Record using the currency code. Optional parameters can be used.

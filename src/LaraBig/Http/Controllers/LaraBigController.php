@@ -31,8 +31,7 @@ class LaraBigController
         StoreModelInterface $storeModel,
         StoreRepositoryInterface $storeRepository,
         AdminRepositoryInterface $adminRepository
-    )
-    {
+    ) {
         $this->storeModel = $storeModel;
         $this->storeRepository = $storeRepository;
         $this->adminRepository = $adminRepository;
@@ -90,7 +89,6 @@ class LaraBigController
             $request->session()->put('access_token', $storeData['access_token']);
 
             return view('larabig::success');
-
         } catch (AppInstallException $e) {
             DB::rollBack();
             event(new Events\AppInstall\Failed($e->getMessage()));
@@ -122,7 +120,6 @@ class LaraBigController
 
     public function removeUser()
     {
-
     }
 
     public function logout()

@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Shipping\Zone;
 
-
 interface Method
 {
     const PREFIX = "methods";

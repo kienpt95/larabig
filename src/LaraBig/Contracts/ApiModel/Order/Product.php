@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
-
 interface Product
 {
     const PREFIX = "products";
@@ -26,5 +25,4 @@ interface Product
      * @return mixed
      */
     public function get($order_id, $product_id);
-
 }

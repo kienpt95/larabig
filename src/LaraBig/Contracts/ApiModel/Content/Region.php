@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Content;
 
-
 interface Region
 {
     const PREFIX = "regions";

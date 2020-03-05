@@ -53,7 +53,7 @@ interface Metafield
      * @param $data
      * @return mixed
      */
-    public function  update($product_id, $variant_id,$metafield_id, $data);
+    public function update($product_id, $variant_id, $metafield_id, $data);
     /**
      * Deletes a product variant Metafield.
      * DELETE /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
@@ -63,6 +63,5 @@ interface Metafield
      * @param $metafield_id
      * @return mixed
      */
-    public function  delete($product_id, $variant_id,$metafield_id);
-
+    public function delete($product_id, $variant_id, $metafield_id);
 }

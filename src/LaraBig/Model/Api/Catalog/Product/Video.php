@@ -6,10 +6,8 @@ namespace Smartosc\LaraBig\Model\Api\Catalog\Product;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Video as VideoInterface;
 use Smartosc\LaraBig\Model\Api\AbstractModel;
 
-
 class Video extends AbstractModel implements VideoInterface
 {
-
     protected $resource = "{product_id}/videos";
 
     /**
@@ -51,7 +49,7 @@ class Video extends AbstractModel implements VideoInterface
      */
     public function update($product_id, $id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
+        $result = $this->service()->call('PUT', $this->getResource([
             'product_id' => $product_id,
             'id' => $id
         ]), $data);

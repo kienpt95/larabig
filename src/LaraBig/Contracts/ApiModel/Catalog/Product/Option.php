@@ -53,7 +53,7 @@ interface Option
      * @param $data
      * @return mixed
      */
-    public function update($product_id,$option_id, $data);
+    public function update($product_id, $option_id, $data);
 
     /**
      * Deletes a Variant Option.

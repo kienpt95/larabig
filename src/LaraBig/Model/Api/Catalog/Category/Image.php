@@ -8,13 +8,12 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Image extends AbstractModel implements ImageInterface
 {
-
     protected $resource = "{category_id}/image";
 
     /**
      * @inheritDoc
      */
-    public function create($category_id,$data)
+    public function create($category_id, $data)
     {
         $result = $this->service()->call('POST', $this->getResource([
             'category_id' => $category_id

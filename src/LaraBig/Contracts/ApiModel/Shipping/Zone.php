@@ -3,7 +3,6 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Shipping;
 
-
 interface Zone
 {
     const PREFIX = "zones";
