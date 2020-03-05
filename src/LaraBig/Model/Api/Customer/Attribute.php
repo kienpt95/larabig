@@ -1,13 +1,14 @@
 <?php
 
 
-namespace Smartosc\LaraBig\Model\Api;
+namespace Smartosc\LaraBig\Model\Api\Customer;
 
-use Smartosc\LaraBig\Contracts\ApiModel\Customer as Icustomer;
+use Smartosc\LaraBig\Contracts\ApiModel\Customer\Attribute as IAttribute;
+use Smartosc\LaraBig\Model\Api\AbstractModel;
 
-class Customer extends AbstractModel implements Icustomer
+class Attribute extends AbstractModel implements IAttribute
 {
-    protected $resource = "customers";
+    protected $resource = "attributes";
 
     /**
      * @inheritDoc
@@ -23,7 +24,7 @@ class Customer extends AbstractModel implements Icustomer
      */
     public function create($data)
     {
-        $result = $this->service()->call('POST', $this->getResource(), $data);
+        $result = $this->service()->call('POST', $this->service(), $data);
         return $result;
     }
 
@@ -41,8 +42,9 @@ class Customer extends AbstractModel implements Icustomer
      */
     public function delete($ids)
     {
-        $result = $this->service()->call('DELETE', $this->service(), null, [
-            'ids:in' => explode(",", $ids)
+        $result = $this->service()->call('DELETE', $this->getResource(), null,[
+            'id:in' => implode(",",$ids)
         ]);
+        return $result;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Smartosc\LaraBig\Contracts\ApiModel\Geography;
+namespace Smartosc\LaraBig\Contracts\ApiModel;
 
 use Smartosc\LaraBig\Contracts\ApiModel\Country\State;
 

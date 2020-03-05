@@ -52,5 +52,5 @@ interface State
      * @return mixed
      */
 
-    public function countStateOfCountry();
+    public function countStateOfCountry($country_id);
 }

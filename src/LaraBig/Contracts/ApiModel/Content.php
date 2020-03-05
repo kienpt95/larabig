@@ -9,5 +9,4 @@ interface Content
     const PREFIX = "content";
     const VERSION = "v3";
 
-
 }

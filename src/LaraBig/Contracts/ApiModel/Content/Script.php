@@ -41,9 +41,10 @@ interface Script
      * PUT /content/scripts/{uuid}
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/updatescript
      * @param $uuid
+     * @param $data
      * @return mixed
      */
-    public function update($uuid);
+    public function update($uuid, $data);
 
     /**
      * Deletes a Script.
