@@ -16,7 +16,9 @@ class Image extends AbstractModel implements ImageInterface
      */
     public function create($category_id,$data)
     {
-        $result = $this->service()->call('POST', $this->getResource(['category_id'=>$category_id]), $data);
+        $result = $this->service()->call('POST', $this->getResource([
+            'category_id' => $category_id
+        ]), $data);
         return $result;
     }
 
@@ -25,7 +27,9 @@ class Image extends AbstractModel implements ImageInterface
      */
     public function delete($category_id)
     {
-        $result = $this->service()->call('DELETE', $this->getResource(['category_id'=>$category_id]));
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'category_id' => $category_id
+        ]));
         return $result;
     }
 }

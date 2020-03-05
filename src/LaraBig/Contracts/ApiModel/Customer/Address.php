@@ -35,7 +35,7 @@ interface Address
      * @param $id_customer_address
      * @return mixed
      */
-    public function update($id_customer_address, $customer_id, $data);
+    public function update($data);
 
     /**
      * Deletes a Customer Address.
@@ -44,5 +44,5 @@ interface Address
      * @param $id_customer_address
      * @return mixed
      */
-    public function delete($id_customer_address);
+    public function delete($ids);
 }

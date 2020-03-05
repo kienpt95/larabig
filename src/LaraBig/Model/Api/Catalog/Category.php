@@ -41,7 +41,9 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
       */
      public function update($category_id, $data)
      {
-         $result = $this->service()->call('PUT', $this->getResource(['category_id'=>$category_id]), $data);
+         $result = $this->service()->call('PUT', $this->getResource([
+             'category_id' => $category_id
+         ]), $data);
          return $data;
      }
 
@@ -50,7 +52,9 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
       */
      public function delete($category_id)
      {
-         $result = $this->service()->call('DELETE', $this->getResource(['category_id'=>$category_id]));
+         $result = $this->service()->call('DELETE', $this->getResource([
+             'category_id' => $category_id
+         ]));
          return $result;
      }
  }

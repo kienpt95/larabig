@@ -16,9 +16,9 @@ class Image extends AbstractModel implements  ImageInterface
     public function create($product_id, $variant_id, $data)
     {
         $result = $this->service()->call('POST',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
-        ]),$data);
+            'product_id' => $product_id,
+            'variant_id' => $variant_id
+        ]), $data);
         return $result;
     }
 }

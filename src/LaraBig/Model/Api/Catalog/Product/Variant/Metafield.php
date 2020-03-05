@@ -14,9 +14,9 @@ class Metafield extends AbstractModel implements MetafieldInterface
      */
     public function all($product_id, $variant_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id
         ]));
         return $result;
     }
@@ -26,10 +26,10 @@ class Metafield extends AbstractModel implements MetafieldInterface
      */
     public function get($product_id, $variant_id, $metafield_id)
     {
-        $result = $this->service()->call('GET',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
-            ,'metafield_id'=>$metafield_id
+        $result = $this->service()->call('GET', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id,
+            'metafield_id' => $metafield_id
         ]));
         return $result;
     }
@@ -39,10 +39,10 @@ class Metafield extends AbstractModel implements MetafieldInterface
      */
     public function create($product_id, $variant_id, $data)
     {
-        $result = $this->service()->call('POST',$this->getResource([
+        $result = $this->service()->call('POST', $this->getResource([
             'product_id'=>$product_id
             ,'variant_id'=>$variant_id
-        ]),$data);
+        ]), $data);
         return $result;
     }
 
@@ -51,7 +51,7 @@ class Metafield extends AbstractModel implements MetafieldInterface
      */
     public function update($product_id, $variant_id, $metafield_id, $data)
     {
-        $result = $this->service()->call('PUT',$this->getResource([
+        $result = $this->service()->call('PUT', $this->getResource([
             'product_id'=>$product_id
             ,'variant_id'=>$variant_id
             ,'metafield_id'=>$metafield_id
@@ -64,10 +64,10 @@ class Metafield extends AbstractModel implements MetafieldInterface
      */
     public function delete($product_id, $variant_id, $metafield_id)
     {
-        $result = $this->service()->call('DELETE',$this->getResource([
-            'product_id'=>$product_id
-            ,'variant_id'=>$variant_id
-            ,'metafield_id'=>$metafield_id
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'product_id' => $product_id,
+            'variant_id' => $variant_id,
+            'metafield_id' => $metafield_id
         ]));
         return $result;
     }

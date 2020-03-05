@@ -46,7 +46,7 @@ class Brand extends AbstractModel implements BrandInterface
     {
         $result = $this->service()->call('PUT', $this->getResource([
             'brand_id' => $brand_id
-        ]),$data);
+        ]), $data);
         return $result;
     }
 

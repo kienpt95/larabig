@@ -15,7 +15,9 @@ class Metafield extends  AbstractModel implements  MetafieldInterface
      */
     public function all($category_id)
     {
-        $result = $this->service()->call('GET', $this->getResource(['category_id'=>$category_id]));
+        $result = $this->service()->call('GET', $this->getResource([
+            'category_id' => $category_id
+        ]));
         return $result;
     }
 
@@ -36,7 +38,9 @@ class Metafield extends  AbstractModel implements  MetafieldInterface
      */
     public function create($category_id, $data)
     {
-        $result = $this->service()->call('POST', $this->getResource(['category_id'=>$category_id]), $data);
+        $result = $this->service()->call('POST', $this->getResource([
+            'category_id' => $category_id
+        ]), $data);
         return $result;
     }
 
@@ -46,9 +50,9 @@ class Metafield extends  AbstractModel implements  MetafieldInterface
     public function update($category_id, $metafield_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
-            'category_id'=>$category_id
-            ,'metafield_id'=>$metafield_id
-        ]),$data);
+            'category_id' => $category_id,
+            'metafield_id' => $metafield_id
+        ]) ,$data);
         return $result;
     }
 
@@ -58,8 +62,8 @@ class Metafield extends  AbstractModel implements  MetafieldInterface
     public function delete($category_id, $metafield_id)
     {
         $result = $this->service()->call('DELETE', $this->getResource([
-            'category_id'=>$category_id
-            ,'metafield_id'=>$metafield_id
+            'category_id' => $category_id,
+            'metafield_id' => $metafield_id
         ]));
         return $result;
     }
