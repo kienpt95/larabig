@@ -9,7 +9,6 @@ use Smartosc\LaraBig\Events;
 use \Smartosc\LaraBig\Http\Requests;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\View\View;
-use Smartosc\LaraBig\Helper\LaraBig;
 use Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 
@@ -77,14 +76,13 @@ class LaraBigController
             DB::beginTransaction();
             $store = $this->storeRepository->create($storeData);
 
-            if (LaraBig::isEnabledMultiUser()) {
-                $userData = [
-                    'email' => $storeData['user']['email'],
-                    'bc_id' => $storeData['user']['id'],
-                    'store_hash' => $storeData['store_hash']
-                ];
-                $this->adminRepository->create($userData);
-            }
+            $userData = [
+                'email' => $storeData['user']['email'],
+                'bc_id' => $storeData['user']['id'],
+                'store_hash' => $storeData['store_hash']
+            ];
+            $admin = $this->adminRepository->create($userData);
+
             event(new Events\AppInstall\Success($store));
             DB::commit();
 
@@ -105,13 +103,31 @@ class LaraBigController
         }
     }
 
-    public function uninstall()
+    /**
+     * @param $request
+     * @return mixed
+     */
+    public function uninstall($request)
     {
-        //todo uninstall app
+        try {
+            /** @var \Smartosc\LaraBig\Model\Store|\Smartosc\LaraBig\Contracts\BackendModel\StoreInterface $store */
+            $store = 'TODO get store';
+            $store->delete();
+            event(new Events\Uninstall($store));
+        } catch (\Exception $e) {
+            return view('larabig::error')
+                ->withError('Whoops, looks like something went wrong.');
+        }
     }
 
     public function removeUser()
     {
 
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return true;
     }
 }

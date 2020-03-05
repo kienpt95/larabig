@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->bigIncrements('id');
             $table->string('store_hash')->unique();
             $table->text('access_token');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

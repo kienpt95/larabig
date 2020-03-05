@@ -7,6 +7,7 @@ use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use Smartosc\LaraBig\Exceptions\AppInstallException;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class StoreModel
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Store extends Model implements StoreInterface
 {
+    use SoftDeletes;
+
     protected $fillable = ['store_hash', 'access_token'];
 
     /**
