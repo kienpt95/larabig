@@ -25,6 +25,7 @@ class StoreRepository implements StoreRepositoryInterface
     /** @inheritDoc */
     public function getByStoreHash($store_hash)
     {
-        // TODO: Implement getByStoreHash() method.
+        $store = Store::where('store_hash', $store_hash)->firstOrFail();
+        return $store;
     }
 }
