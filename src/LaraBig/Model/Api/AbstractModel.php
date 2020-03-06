@@ -38,7 +38,7 @@ abstract class AbstractModel
             ? $this->resource
             : $this->lastResource . '/' . $this->resource;
 
-        $resource = $this->parseResouce($resource, $data);
+        $resource = $this->parseResource($resource, $data);
         return $version . '/' . $resource;
     }
 
@@ -47,14 +47,14 @@ abstract class AbstractModel
      * @param array $data
      * @return string
      */
-    private function parseResouce($resource, $data = [])
+    private function parseResource($resource, $data = [])
     {
         foreach ($data as $key => $value) {
             $regex = "/\{$key\}/";
             $resource = preg_replace($regex, $value, $resource);
         }
         $resource = preg_replace('/{+[a-z_]+}/', '', $resource);
-        $resource = preg_replace("//", "/", $resource);
+        $resource = str_replace("//", "/", $resource);
         return $resource;
     }
 
