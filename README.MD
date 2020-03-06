@@ -21,14 +21,13 @@ This package make easy way to quickly build new Big Commerce App with Laravel.
       ->product
       ->all()
     ```
-### Development note:
+### Development guide:
 ##### Enviroment:
 - Docker & Docker compose
 - Laradock
 ##### Step to develop:
 1. Create new laravel project
-2. Clone package into project create in step 1 with name `larbig`
-3. Update `composer.json` file of project:
+2. Update the `composer.json` file:
     ```json
       "extra": {
           "laravel": {
@@ -48,8 +47,9 @@ This package make easy way to quickly build new Big Commerce App with Laravel.
           ]
       },
     ```
+3. Clone this package into project created in step 1 with name `larbig`
 4. Run `composer dump-autoload -o` to Update autoload file.
-
+##### Note:
 - All of class need create contract interface in the folder: `LaraBig\Contracts` and bind in `LaraBigProvider`
 
 ### TODO
