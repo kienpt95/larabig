@@ -38,12 +38,24 @@ abstract class AbstractModel
             ? $this->resource
             : $this->lastResource . '/' . $this->resource;
 
-        if (!empty($data)) {
-            $resource = preg_replace_array('/{+[a-z_]+}/', $data, $resource);
-        }
-        $resource = preg_replace('/\/{+[a-z_]+}/', '', $resource);
-
+        $resource = $this->parseResouce($resource, $data);
         return $version . '/' . $resource;
+    }
+
+    /**
+     * @param string $resource
+     * @param array $data
+     * @return string
+     */
+    private function parseResouce($resource, $data = [])
+    {
+        foreach ($data as $key => $value) {
+            $regex = "/\{$key\}/";
+            $resource = preg_replace($regex, $value, $resource);
+        }
+        $resource = preg_replace('/{+[a-z_]+}/', '', $resource);
+        $resource = preg_replace("//", "/", $resource);
+        return $resource;
     }
 
     public function __get($name)
