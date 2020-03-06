@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\View\View;
 use Smartosc\LaraBig\Contracts\Repository\AdminRepositoryInterface;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class LaraBigController
 {
@@ -105,11 +106,11 @@ class LaraBigController
      * @param $request
      * @return mixed
      */
-    public function uninstall($request)
+    public function uninstall(Request $request)
     {
         try {
             /** @var \Smartosc\LaraBig\Model\Store|\Smartosc\LaraBig\Contracts\BackendModel\StoreInterface $store */
-            $store = 'TODO get store';
+            $store = $request->input('store');
             $store->delete();
             event(new Events\Uninstall($store));
         } catch (\Exception $e) {
