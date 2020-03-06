@@ -39,8 +39,9 @@ abstract class AbstractModel
             : $this->lastResource . '/' . $this->resource;
 
         if (!empty($data)) {
-            $resource = preg_replace_array('/{[a-z_]+}/', $data, $resource);
+            $resource = preg_replace_array('/{+[a-z_]+}/', $data, $resource);
         }
+        $resource = preg_replace('/\/{+[a-z_]+}/', '', $resource);
 
         return $version . '/' . $resource;
     }
