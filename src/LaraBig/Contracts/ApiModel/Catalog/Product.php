@@ -3,7 +3,7 @@
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand\Metafield;
+use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Metafield;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\CustomField;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Image;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\BulkPricingRule;

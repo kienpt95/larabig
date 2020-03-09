@@ -32,7 +32,7 @@ class Value extends AbstractModel implements ValueInterface
             'modifier_id' => $modifier_id,
             'value_id' => $value_id
         ]));
-        return result;
+        return $result;
     }
 
     /**

@@ -39,7 +39,6 @@ class Image extends AbstractModel implements ImageInterface
     {
         $result = $this->service()->call('POST', $this->getResource([
             'product_id' => $product_id
-
         ], $data));
         return $result;
     }

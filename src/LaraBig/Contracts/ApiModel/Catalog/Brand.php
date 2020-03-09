@@ -10,7 +10,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand\Metafield;
  * Interface Brand
  * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog
  * @property Image image
- * @property Metafield metafield
+ * @property Metafield meta_field_brand
  */
 interface Brand
 {
