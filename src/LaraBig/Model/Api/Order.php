@@ -51,7 +51,10 @@ class Order extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiMode
      */
     public function delete($order_id)
     {
-        // TODO: Implement delete() method.
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'order_id' => $order_id
+        ]));
+        return $result;
     }
 
     /**
@@ -59,6 +62,8 @@ class Order extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiMode
      */
     public function count()
     {
-        // TODO: Implement count() method.
+        $resource = $this.$this->getResource().'/count';
+        $result = $this->service()->call('GET', $resource);
+        return $result;
     }
 }
