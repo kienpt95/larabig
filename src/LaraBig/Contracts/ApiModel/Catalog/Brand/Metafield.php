@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Brand;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Metafield
 {
     const PREFIX = "metafields";
@@ -10,7 +12,9 @@ interface Metafield
     /**
      * Get a list of Brand Metafields
      * GET /catalog/brands/{brand_id}/metafields
+     * @example $brand_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/getbrandmetafieldsbybrandid
+     * @throws GuzzleException
      * @param $brand_id
      * @return mixed
      */
@@ -19,7 +23,9 @@ interface Metafield
     /**
      * Get a Brand Metafield
      * GET /catalog/brands/{brand_id}/metafields/{metafield_id}
+     * @example $brand_id = 1; $metafield_id = 2;
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/getbrandmetafieldbybrandid
+     * @throws GuzzleException
      * @param $brand_id
      * @param $metafield_id
      * @return mixed
@@ -29,7 +35,16 @@ interface Metafield
     /**
      * Creates a Brand Metafield.
      * POST /catalog/brands/{brand_id}/metafields
+     * @example $brand_id = 2; $data = [
+                                        "permission_set"=> "app_only",
+                                        "namespace"=> "App Namespace",
+                                        "key"=> "location_id",
+                                        "value"=> "Shelf 3, Bin 5",
+                                        "description"=> "Product Location",
+                                        "resource_type"=> "brand"
+                                        ];
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/createbrandmetafield
+     * @throws GuzzleException
      * @param $brand_id
      * @param $data
      * @return mixed
@@ -39,7 +54,16 @@ interface Metafield
     /**
      * Updates a Brand Metafield.
      * PUT /catalog/brands/{brand_id}/metafields/{metafield_id}
+     * @example $brand_id = 2; $metafield_id = 1; $data = [
+                                        "permission_set"=> "app_only",
+                                        "namespace"=> "App Namespace",
+                                        "key"=> "location_id",
+                                        "value"=> "Shelf 3, Bin 5",
+                                        "description"=> "Product Location",
+                                        "resource_type"=> "brand"
+                                        ];
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/updatebrandmetafield
+     * @throws GuzzleException
      * @param $brand_id
      * @param $metafield_id
      * @return mixed
@@ -49,7 +73,9 @@ interface Metafield
     /**
      * Deletes a Brand Metafield.
      * DELETE /catalog/brands/{brand_id}/metafields/{metafield_id}
+     * @example $brand_id = 2; $metafield_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/catalog/catalog-api/brand-metafields/deletebrandmetafieldbyid
+     * @throws GuzzleException
      * @param $brand_id
      * @param $metafield_id
      * @return mixed

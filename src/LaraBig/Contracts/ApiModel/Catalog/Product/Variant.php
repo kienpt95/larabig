@@ -3,6 +3,7 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant\Metafield;
 
 /**
@@ -17,7 +18,9 @@ interface Variant
     /**
      * Returns a list of product Variants
      * GET /catalog/products/{product_id}/variants
+     * @example $product_id = 112;
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
+     * @throws GuzzleException
      * @param $product_id
      * @return mixed
      */
@@ -26,6 +29,7 @@ interface Variant
     /**
      * Get a single product Variant
      * GET /catalog/products/{product_id}/variants/{variant_id}
+     * @example $product_id = 112; $variant_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
      * @param $product_id
      * @param $variant_id
@@ -36,7 +40,17 @@ interface Variant
     /**
      * Creates a Product Variant.
      * POST /catalog/products/{product_id}/variants
+     * @example $product_id = 112; $data = [
+                                            "title" => "Great Product",
+                                            "text" => "This product is amazing!!!",
+                                            "status" => "approved",
+                                            "rating" => 5,
+                                            "email" => "janedoe@email.com",
+                                            "name" => "Jane Doe",
+                                            "date_reviewed" => "2018-05-07T19:37:13+00:00"
+                                            ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/getvariantsbyproductid
+     * @throws GuzzleException
      * @param $product_id
      * @param $data
      * @return mixed
@@ -46,7 +60,11 @@ interface Variant
     /**
      * Updates a product Variant.
      * PUT /catalog/products/{product_id}/variants/{variant_id}
+     * @example $product_id = 112;$variant_id = 1; $data = [
+                                            "email" => "admin@email.com"
+                                            ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/updatevariant
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @param $data
@@ -57,7 +75,9 @@ interface Variant
     /**
      * Deletes a product Variant.
      * DELETE /catalog/products/{product_id}/variants/{variant_id}
+     * @example $product_id = 112;$variant_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants/deletevariantbyid
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @return mixed
