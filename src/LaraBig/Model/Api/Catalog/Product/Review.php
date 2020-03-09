@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Review extends AbstractModel implements ReviewInterface
 {
-    protected $resource = "{product_id}/reviews";
+    protected $resource = "reviews/{review_id}";
     /**
      * @inheritDoc
      */

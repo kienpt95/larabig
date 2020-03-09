@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Summary extends AbstractModel implements SummaryInterface
 {
-    protected $resource = "summary";
+    protected $resource = "summary/{id}";
     /**
      * @inheritDoc
      */

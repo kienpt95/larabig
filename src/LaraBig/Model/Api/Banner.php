@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Banner as BannerInterface;
 
 class Banner extends AbstractModel implements BannerInterface
 {
-    protected $resource = "banners";
+    protected $resource = "banners/{id}";
     /**
      * @inheritDoc
      */

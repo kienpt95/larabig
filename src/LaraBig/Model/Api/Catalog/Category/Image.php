@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Image extends AbstractModel implements ImageInterface
 {
-    protected $resource = "{category_id}/image";
+    protected $resource = "image/{image_id}";
 
     /**
      * @inheritDoc

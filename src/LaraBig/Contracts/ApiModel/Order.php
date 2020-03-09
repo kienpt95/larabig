@@ -43,7 +43,7 @@ interface Order
      * @param $order_id
      * @return mixed
      */
-    public function getOrder($order_id);
+    public function get($order_id);
 
     /**
      * Creates an Order.

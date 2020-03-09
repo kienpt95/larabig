@@ -26,10 +26,10 @@ interface Metafield
      * GET /catalog/products/{product_id}/metafields/{metafield_id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-metafields/getproductmetafieldbyproductid
      * @param $product_id
-     * @param $metafields_id
+     * @param $metafield_id
      * @return mixed
      */
-    public function get($product_id, $metafields_id);
+    public function get($product_id, $metafield_id);
 
     /**
      * Creates a Product Metafield.

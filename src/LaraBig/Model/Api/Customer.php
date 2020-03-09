@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Customer as Icustomer;
 
 class Customer extends AbstractModel implements Icustomer
 {
-    protected $resource = "customers";
+    protected $resource = "customers/{customerId}";
 
     /**
      * @inheritDoc

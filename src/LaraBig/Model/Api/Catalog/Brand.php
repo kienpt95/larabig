@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Brand extends AbstractModel implements BrandInterface
 {
-    protected $resource = "brands";
+    protected $resource = "brands/{brand_id}";
 
     /**
      * @inheritDoc

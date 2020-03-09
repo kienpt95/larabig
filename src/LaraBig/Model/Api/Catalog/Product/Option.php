@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Option extends AbstractModel implements OptionInterface
 {
-    protected $resource = "{product_id}/options";
+    protected $resource = "options/{option_id}";
     /**
      * @inheritDoc
      */

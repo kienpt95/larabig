@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Sate extends AbstractModel implements IState
 {
-    protected $resource = "states";
+    protected $resource = "states/{state_id}";
     /**
      * @inheritDoc
      */
@@ -24,7 +24,7 @@ class Sate extends AbstractModel implements IState
     public function allStatesOfCountry($country_id)
     {
         $result = $this->service()->call('GET', $this->getResource([
-            'country_id' => $country_id
+            'id' => $country_id
         ]));
         return $result;
     }
@@ -35,8 +35,8 @@ class Sate extends AbstractModel implements IState
     public function StateOfCountry($country_id, $id)
     {
         $result = $this->service()->call('GET', $this->getResource([
-            'country_id' => $country_id,
-            'id' => $id
+            'id' => $country_id,
+            'state_id' => $id
         ]));
         return $result;
     }
@@ -57,7 +57,7 @@ class Sate extends AbstractModel implements IState
     public function countStateOfCountry($country_id)
     {
         $resource = $this->getResource([
-            'country_id' => $country_id
+            'id' => $country_id
         ]).'/count';
         $result = $this->service()->call('GET', $resource);
         return $result;

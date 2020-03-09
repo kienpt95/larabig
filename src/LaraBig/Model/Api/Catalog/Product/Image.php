@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Image as ImageInterface;
 
 class Image extends AbstractModel implements ImageInterface
 {
-    protected $resource = "{product_id}/images";
+    protected $resource = "images/{image_id}";
 
     /** @inheritDoc */
     public function all($product_id)

@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Region extends AbstractModel implements IRegionuse
 {
-    protected $resource = "regions";
+    protected $resource = "regions/{region_id}";
     /**
      * @inheritDoc
      */

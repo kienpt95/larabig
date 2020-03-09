@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Coupon as ICoupon;
 
 class Coupon extends AbstractModel implements ICoupon
 {
-    protected $resource = "coupons";
+    protected $resource = "coupons/{id}";
     /**
      * @inheritDoc
      */

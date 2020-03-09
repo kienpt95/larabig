@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Variant extends AbstractModel implements VariantInterface
 {
-    protected $resource = "{product_id}/variants";
+    protected $resource = "variants/{variant_id}";
 
     /**
      * @inheritDoc
