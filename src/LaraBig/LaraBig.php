@@ -2,16 +2,20 @@
 
 namespace Smartosc\LaraBig;
 
+use Smartosc\LaraBig\Contracts\ApiModel\Banner;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog;
+use Smartosc\LaraBig\Contracts\ApiModel\Content;
+use Smartosc\LaraBig\Contracts\ApiModel\Country;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use InvalidArgumentException;
-use Smartosc\LaraBig\Model\Api\Banner;
 
 /**
  * Class LaraBig
  * @package Smartosc\LaraBig
  * @property Catalog catalog
+ * @property Content content
  * @property Banner banner
+ * @property Country country
  */
 class LaraBig
 {

@@ -14,5 +14,5 @@ interface Method
      * @see https://developer.bigcommerce.com/api-reference/store-management/payment-methods/payment-methods/paymentsmethodsget
      * @return mixed
      */
-    public function getAccepted($order_id);
+    public function getAccepted();
 }

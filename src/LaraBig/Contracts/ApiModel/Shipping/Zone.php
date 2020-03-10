@@ -23,7 +23,7 @@ interface Zone
      * @param $id
      * @return mixed
      */
-    public function get($id);
+    public function get($zone_id);
 
     /**
      * Creates a Shipping Zone.
@@ -42,7 +42,7 @@ interface Zone
      * @param $data
      * @return mixed
      */
-    public function update($id, $data);
+    public function update($zone_id, $data);
 
     /**
      * Deletes a Shipping Zone.
@@ -51,5 +51,5 @@ interface Zone
      * @param $id
      * @return mixed
      */
-    public function delete($id);
+    public function delete($zone_id);
 }
