@@ -13,7 +13,7 @@ class Banner extends AbstractModel implements BannerInterface
      */
     public function all()
     {
-        $result = $this->service()->call('GET', $this->getResource());
+        $result = $this->service()->call('GET', $this->getResource([], 'v2'));
         return $result;
     }
 
@@ -24,7 +24,7 @@ class Banner extends AbstractModel implements BannerInterface
     {
         $result = $this->service()->call('GET', $this->getResource([
             'id'=>$id
-        ]));
+        ], 'v2'));
         return $result;
     }
 
@@ -33,7 +33,7 @@ class Banner extends AbstractModel implements BannerInterface
      */
     public function create($data)
     {
-        $result = $this->service()->call('POST', $this->getResource(), $data);
+        $result = $this->service()->call('POST', $this->getResource([], 'v2'), $data);
         return $result;
     }
 
@@ -44,7 +44,7 @@ class Banner extends AbstractModel implements BannerInterface
     {
         $result = $this->service()->call('PUT', $this->getResource([
             'id' => $id
-        ]), $data);
+        ], 'v2'), $data);
         return $result;
     }
 
@@ -55,13 +55,13 @@ class Banner extends AbstractModel implements BannerInterface
     {
         $result = $this->service()->call('DELETE', $this->getResource([
             'id' => $id
-        ]));
+        ], 'v2'));
         return $result;
     }
 
     public function count()
     {
-        $resource = $this->getResource().'/count';
+        $resource = $this->getResource([], 'v2').'/count';
         $result = $this->service()->call('GET', $resource);
         return $result;
     }

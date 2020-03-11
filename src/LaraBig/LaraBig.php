@@ -6,6 +6,10 @@ use Smartosc\LaraBig\Contracts\ApiModel\Banner;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 use Smartosc\LaraBig\Contracts\ApiModel\Content;
 use Smartosc\LaraBig\Contracts\ApiModel\Country;
+use Smartosc\LaraBig\Contracts\ApiModel\Country\State;
+use Smartosc\LaraBig\Contracts\ApiModel\Coupon;
+use Smartosc\LaraBig\Contracts\ApiModel\Currency;
+use Smartosc\LaraBig\Contracts\ApiModel\Customer;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use InvalidArgumentException;
 
@@ -16,6 +20,9 @@ use InvalidArgumentException;
  * @property Content content
  * @property Banner banner
  * @property Country country
+ * @property Coupon coupon
+ * @property Currency currency
+ * @property Customer customer
  */
 class LaraBig
 {
@@ -82,7 +89,6 @@ class LaraBig
             'json' => $data,
             'query' => $parameters
         ];
-
         $response = $this->httpClient->request(
             $method,
             $this->uriBuilder($resource, $method),

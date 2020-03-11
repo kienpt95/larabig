@@ -58,6 +58,19 @@ class LaraBigProvider extends ServiceProvider
             'region',
             'script',
             'widget_template'
+        ],
+        'banner',
+        'country' => [
+            'state'
+        ],
+        'coupon',
+        'currency',
+        'customer' => [
+            'address',
+            'attribute',
+            'attribute_value',
+            'consent',
+            'form_field',
         ]
     ];
 
