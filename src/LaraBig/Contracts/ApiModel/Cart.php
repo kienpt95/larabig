@@ -5,7 +5,15 @@ namespace Smartosc\LaraBig\Contracts\ApiModel;
 
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Contracts\ApiModel\Cart\Item;
+use Smartosc\LaraBig\Contracts\ApiModel\Cart\RedirectUrl;
 
+/**
+ * Interface Cart
+ * @package Smartosc\LaraBig\Contracts\ApiModel
+ * @property Item item
+ * @property RedirectUrl redirect_url
+ */
 interface Cart
 {
     const PREFIX = "carts";

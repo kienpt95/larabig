@@ -43,5 +43,5 @@ interface Item
      * @param $itemId
      * @return mixed
      */
-    public function DELETE($cartId, $itemId);
+    public function delete($cartId, $itemId);
 }

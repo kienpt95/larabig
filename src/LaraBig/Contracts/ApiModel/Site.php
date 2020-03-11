@@ -48,7 +48,7 @@ interface Site
      * @param $data
      * @return mixed
      */
-    public function update($side_id, $data);
+    public function update($site_id, $data);
 
     /**
      * Delete a site for provided channel
@@ -58,5 +58,5 @@ interface Site
      * @param $side_id
      * @return mixed
      */
-    public function delete($side_id);
+    public function delete($site_id);
 }
