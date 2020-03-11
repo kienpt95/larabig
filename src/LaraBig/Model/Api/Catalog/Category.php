@@ -8,7 +8,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
 
  class Category extends AbstractModel implements CategoryInterface
  {
-     protected $resource = "categories";
+     protected $resource = "categories/{category_id}";
 
      /**
       * @inheritDoc

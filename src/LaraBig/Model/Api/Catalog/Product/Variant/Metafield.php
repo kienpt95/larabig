@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Metafield extends AbstractModel implements MetafieldInterface
 {
-    protected $resource = "{variant_id}/metafields";
+    protected $resource = "metafields/{metafield_id}";
     /**
      * @inheritDoc
      */

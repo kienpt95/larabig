@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Product extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product
 {
-    protected $resource = 'products';
+    protected $resource = 'products/{product_id}';
 
     public function all()
     {
@@ -18,7 +18,9 @@ class Product extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiMo
 
     public function get($id)
     {
-        $resource = $this->getResource() . '/' . $id;
+        $resource = $this->getResource([
+            'product_id' => $id
+        ]) ;
         $result = $this->service()->call('GET', $resource);
         return $result;
     }
@@ -32,14 +34,18 @@ class Product extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiMo
 
     public function update($id, $data)
     {
-        $resource = $this->getResource() . '/' . $id;
+        $resource = $this->getResource([
+            'product_id' => $id
+        ]) ;
         $result = $this->service()->call('PUT', $resource, $data);
         return $result;
     }
 
     public function delete($id)
     {
-        $resource = $this->getResource() . '/' . $id;
+        $resource = $this->getResource([
+            'product_id' => $id
+        ]) ;
         $result = $this->service()->call('DELETE', $resource);
         return $result;
     }

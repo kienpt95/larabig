@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Script extends AbstractModel implements IScript
 {
-    protected $resource = "scripts";
+    protected $resource = "scripts/{uuid}";
 
     /**
      * @inheritDoc

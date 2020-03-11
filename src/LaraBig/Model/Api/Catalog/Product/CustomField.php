@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class CustomField extends AbstractModel implements CustomFieldInterface
 {
-    protected $resource = "{product_id}/custom-fields";
+    protected $resource = "custom-fields/{custom_field_id}";
     /**
      * @inheritDoc
      */

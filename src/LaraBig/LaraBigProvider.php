@@ -22,8 +22,55 @@ class LaraBigProvider extends ServiceProvider
     private $_apiModelBind = [
         'catalog' => [
             'product' => [
-                'image'
-            ]
+                'bulk_pricing_rule',
+                'complex_rule',
+                'custom_field',
+                'image',
+                'meta_field',
+                'modifier' =>[
+                    'value' => [
+                        'image'
+                    ]
+                ],
+                'option' => [
+                    'value'
+                ],
+                'review',
+                'variant' => [
+                    'image',
+                    'metefield'
+                ],
+                'video'
+            ],
+            'brand' => [
+                'image',
+                'metafield'
+            ],
+            'category' => [
+                'image',
+                'meta_field',
+                'tree'
+            ],
+            'summary',
+            'variant'
+        ],
+        'content' => [
+            'region',
+            'script',
+            'widget_template'
+        ],
+        'banner',
+        'country' => [
+            'state'
+        ],
+        'coupon',
+        'currency',
+        'customer' => [
+            'address',
+            'attribute',
+            'attribute_value',
+            'consent',
+            'form_field',
         ]
     ];
 

@@ -5,7 +5,7 @@ namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
 interface Tax
 {
-    const PREFIX = "taxex";
+    const PREFIX = "taxes";
     const VERSION = "";
 
     /**

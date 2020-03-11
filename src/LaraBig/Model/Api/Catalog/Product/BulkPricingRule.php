@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class BulkPricingRule extends AbstractModel implements BPRInterface
 {
-    protected $resource = "{product_id}/bulk-pricing-rules";
+    protected $resource = "bulk-pricing-rules/{bulk_pricing_rule_id}";
     /**
      * @inheritDoc
      */

@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\ComplexRule as ComplexRu
 
 class ComplexRule extends AbstractModel implements ComplexRuleInterface
 {
-    protected $resource = "{product_id}/complex-rules";
+    protected $resource = "complex-rules/{complex_rule_id}";
     /**
      * @inheritDoc
      */

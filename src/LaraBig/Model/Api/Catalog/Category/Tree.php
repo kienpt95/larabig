@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Tree extends AbstractModel implements TreeInterface
 {
-    protected $resource = "tree";
+    protected $resource = "tree/{tree_id}";
     /**
      * @inheritDoc
      */

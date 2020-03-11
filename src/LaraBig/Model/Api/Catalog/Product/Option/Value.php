@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Value extends AbstractModel implements ValueInterface
 {
-    protected $resource = "{option_id}/values";
+    protected $resource = "values/{value_id}";
 
     /**
      * @inheritDoc

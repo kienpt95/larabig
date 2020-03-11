@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Country as ICountry;
 
 class Country extends AbstractModel implements ICountry
 {
-    protected $resource = "countries";
+    protected $resource = "countries/{id}";
 
     /**
      * @inheritDoc

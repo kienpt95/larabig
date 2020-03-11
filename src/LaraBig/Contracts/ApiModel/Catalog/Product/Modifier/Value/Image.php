@@ -5,7 +5,7 @@ namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Modifier\Value;
 
 interface Image
 {
-    const PREFIX = "image";
+    const PREFIX = "image/{image_id}";
     const VERSION = "v3";
     /**
      * Creates a Modifier Image.

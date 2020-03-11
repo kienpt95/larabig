@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class WidgetTemplate extends AbstractModel implements IWidgetTemplate
 {
-    protected $resource = "widget-templates";
+    protected $resource = "widget-templates/{uuid}";
 
     /**
      * @inheritDoc

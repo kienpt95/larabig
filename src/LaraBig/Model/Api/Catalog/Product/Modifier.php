@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Modifier extends AbstractModel implements ModifierInterface
 {
-    protected $resource = "{product_id}/modifiers";
+    protected $resource = "modifiers/{modifier_id}";
     /**
      * @inheritDoc
      */

@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Content;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Script
 {
     const PREFIX = "scripts";
@@ -13,6 +15,7 @@ interface Script
      * This will only return scripts that have been created by the api key and password that created the script originally.
      * GET /content/scripts
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/getscripts
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -20,7 +23,9 @@ interface Script
     /**
      * Returns a single Script.
      * GET /content/scripts/{uuid}
+     * @example $uuid = 1;
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/getscript
+     * @throws GuzzleException
      * @param $uuid
      * @return mixed
      */
@@ -29,6 +34,18 @@ interface Script
     /**
      * Creates a Script.
      * POST /content/scripts
+     * @example $data = [
+                        "name"=> "Bootstrap",
+                        "description"=> "Build responsive websites",
+                        "html"=> "<script src=\\\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\\\"></script>",
+                        "src"=> "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+                        "auto_uninstall"=> true,
+                        "load_method"=> "default",
+                        "location"=> "footer",
+                        "visibility"=> "all_pages",
+                        "kind" => "src",
+                        "consent_category" => "essential"
+                        ];
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/createscript
      * @param $data
      * @return mixed
@@ -38,7 +55,11 @@ interface Script
     /**
      * Updates a Script.
      * PUT /content/scripts/{uuid}
+     * @example $uuid = 1; $data = [
+                                    "description"=> "Responsive websites",
+                                    ];
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/updatescript
+     * @throws GuzzleException
      * @param $uuid
      * @param $data
      * @return mixed
@@ -48,6 +69,7 @@ interface Script
     /**
      * Deletes a Script.
      * DELETE /content/scripts/{uuid}
+     * @example $uuid 1;
      * @see https://developer.bigcommerce.com/api-reference/storefront/content-scripts-api/scripts/deletescript
      * @param $uuid
      * @return mixed

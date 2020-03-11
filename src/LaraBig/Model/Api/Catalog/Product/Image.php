@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Image as ImageInterface;
 
 class Image extends AbstractModel implements ImageInterface
 {
-    protected $resource = "{product_id}/images";
+    protected $resource = "images/{image_id}";
 
     /** @inheritDoc */
     public function all($product_id)
@@ -39,7 +39,6 @@ class Image extends AbstractModel implements ImageInterface
     {
         $result = $this->service()->call('POST', $this->getResource([
             'product_id' => $product_id
-
         ], $data));
         return $result;
     }

@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Currency as ICurrency;
 
 class Currency extends AbstractModel implements ICurrency
 {
-    protected $resource = "currencies";
+    protected $resource = "currencies/{id}";
 
     /**
      * @inheritDoc

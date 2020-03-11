@@ -3,22 +3,23 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
-use Smartosc\LaraBig\Contracts\ApiModel\Banner\Count;
+
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Interface Banner
  * @package Smartosc\LaraBig\Contracts\ApiModel
- * @property Count count
  */
 interface Banner
 {
     const PREFIX = "banners";
-    const VERION = "v3";
+    const VERISON = "v2";
 
     /**
      * Returns a list of Banners. Default sorting is by banner id, from lowest to highest.
      * GET /banners
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/getallbanners
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -26,7 +27,9 @@ interface Banner
     /**
      * Returns a single Banner
      * GET /banners/{id}
+     * @example $id = 1;
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/getabanner
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */
@@ -35,7 +38,16 @@ interface Banner
     /**
      * Create a Banner
      * POST /banners
+     * @example $data = [
+                        "name"=> "Sale Banner",
+                        "content"=> "<p> Sale! Tuesday at 9am! </p>",
+                        "page" => "home_page",
+                        "location" => "top",
+                        "date_type" => "always",
+                        "visible" => 1
+                        ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/createabanner
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -44,7 +56,16 @@ interface Banner
     /**
      * Update Banner
      * PUT /banners/{id}
+     * @example $id = 2; $data = [
+                                    "name"=> " Not Sale Banner",
+                                    "content"=> "<p> Not Sale! Tuesday at 9am! </p>",
+                                    "page" => "home_page",
+                                    "location" => "bottom",
+                                    "date_type" => "always",
+                                    "visible" => 1
+                                    ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/updateabanner
+     * @throws GuzzleException
      * @param $id
      * @param $data
      * @return mixed
@@ -54,7 +75,9 @@ interface Banner
     /**
      * Delete a Banner
      * DELETE /banners/{id}
+     * @example $id = 2;
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/deleteabanner
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */
@@ -63,6 +86,7 @@ interface Banner
      * Returns a count of Banners.
      * GET /banners/count
      * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/getacountofbanners
+     * @throws GuzzleException
      * @return mixed
      */
     public function count();

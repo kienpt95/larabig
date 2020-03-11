@@ -8,7 +8,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Video extends AbstractModel implements VideoInterface
 {
-    protected $resource = "{product_id}/videos";
+    protected $resource = "videos/{video_id}";
 
     /**
      * @inheritDoc

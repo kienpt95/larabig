@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 /**
  * Interface Metafield
  * @package Smartosc\LaraBig\Contracts\ApiModel\Catalog\Product\Variant
@@ -14,7 +16,9 @@ interface Metafield
     /**
      * Get a list of product variant Metafields.
      * GET /catalog/products/{product_id}/variants/{variant_id}/metafields
+     * @example $product_id = 112; $variant_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/getvariantmetafieldsbyproductidandvariantid
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @return mixed
@@ -24,6 +28,8 @@ interface Metafield
     /**
      * Get a single product variant Metafield.
      * GET /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+     * @example $product_id = 112; $variant_id = 12; $mtafield_id = 1;
+     * @throws GuzzleException
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/getvariantmetafieldbyproductidandvariantid
      * @param $product_id
      * @param $variant_id
@@ -35,7 +41,17 @@ interface Metafield
     /**
      * Creates a product variant Metafield.
      * POST /catalog/products/{product_id}/variants/{variant_id}/metafields
+     * @example $product_id = 112l $variant_id = 11; $data = [
+                                                                "permission_set" => "app_only",
+                                                                "namespace" => "App Namespace",
+                                                                "key"=> "location_id",
+                                                                "value"=> "Shelf 3, Bin 5",
+                                                                "description"=> "Where products are locationed",
+                                                                "resource_type"=> "variant",
+                                                                "resource_id"=> 111
+                                                                 ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/createvariantmetafield
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @param $data
@@ -46,7 +62,11 @@ interface Metafield
     /**
      * Updates a product variant Metafield.
      * PUT /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+     * @example $product_id = 112l $variant_id = 11; $variant_id = 1; $data = [
+                                                            "description"=> "where you write description",
+                                                            ];
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/updatevariantmetafield
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @param $metafield_id
@@ -57,7 +77,9 @@ interface Metafield
     /**
      * Deletes a product variant Metafield.
      * DELETE /catalog/products/{product_id}/variants/{variant_id}/metafields/{metafield_id}
+     * @example $product_id = 112l $variant_id = 11; $variant_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/store-management/catalog/product-variants-metafields/deletevariantmetafieldbyid
+     * @throws GuzzleException
      * @param $product_id
      * @param $variant_id
      * @param $metafield_id
