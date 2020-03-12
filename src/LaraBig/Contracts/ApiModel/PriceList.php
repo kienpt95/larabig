@@ -3,6 +3,7 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Smartosc\LaraBig\Contracts\ApiModel\PriceList\Assignment;
 use Smartosc\LaraBig\Contracts\ApiModel\PriceList\Record;
 
@@ -21,6 +22,7 @@ interface PriceList
      * Get a list of Price Lists
      * GET /pricelists
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists/getpricelistcollection
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -29,6 +31,7 @@ interface PriceList
      * Get a single Price List.
      * GET /pricelists/{price_list_id}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists/getpricelist
+     * @throws GuzzleException
      * @param $price_list_id
      * @return mixed
      */
@@ -38,6 +41,7 @@ interface PriceList
      * Creates a Price List.
      * POST /pricelists
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists/createpricelist
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -47,6 +51,7 @@ interface PriceList
      * Update a price list
      * PUT /pricelists/{price_list_id}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists/updatepricelist
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $data
      * @return mixed
@@ -57,6 +62,7 @@ interface PriceList
      * Deletes a Price List. All associated price records are also removed.
      * DELETE /pricelists/{price_list_id}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists/deletepricelist
+     * @throws GuzzleException
      * @param $price_list_id
      * @return mixed
      */

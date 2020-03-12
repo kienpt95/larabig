@@ -7,7 +7,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Customer as Icustomer;
 
 class Customer extends AbstractModel implements Icustomer
 {
-    protected $resource = "customers/{customerId}";
+    protected $resource = "customers/{customer_id}";
 
     /**
      * @inheritDoc
@@ -23,6 +23,7 @@ class Customer extends AbstractModel implements Icustomer
      */
     public function create($data)
     {
+
         $result = $this->service()->call('POST', $this->getResource(), $data);
         return $result;
     }
@@ -41,8 +42,9 @@ class Customer extends AbstractModel implements Icustomer
      */
     public function delete($ids)
     {
-        $result = $this->service()->call('DELETE', $this->service(), null, [
-            'ids:in' => explode(",", $ids)
+        $result = $this->service()->call('DELETE', $this->getResource(), null, [
+            'id:in' => implode(",", $ids)
         ]);
+        return $result;
     }
 }

@@ -24,7 +24,7 @@ class Attribute extends AbstractModel implements IAttribute
      */
     public function create($data)
     {
-        $result = $this->service()->call('POST', $this->service(), $data);
+        $result = $this->service()->call('POST', $this->getResource(), $data);
         return $result;
     }
 

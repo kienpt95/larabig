@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\PriceList;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Record
 {
     const PREFIX = "records";
@@ -12,6 +14,7 @@ interface Record
      * Get a list of Price List Records associated with a Price List.
      * GET /pricelists/{price_list_id}/records
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/getpricelistrecordcollection
+     * @throws GuzzleException
      * @param $price_list_id
      * @return mixed
      */
@@ -21,6 +24,7 @@ interface Record
      * Creates or updates Price List Records.
      * PUT /pricelists/{price_list_id}/records.
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/setpricelistrecordcollection
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $data
      * @return mixed
@@ -31,6 +35,7 @@ interface Record
      * Deletes a Price List Record. Deleting the records does not delete the Price List. Optional parameters can be passed in.
      * DELETE /pricelists/{price_list_id}/records
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/deletepricelistrecordsbyfilter
+     * @throws GuzzleException
      * @param $price_list_id
      * @return mixed
      */
@@ -40,6 +45,7 @@ interface Record
      * Returns Price List Records using the variant ID. Will also contain currency records.
      * GET /pricelists/{price_list_id}/records/{variant_id}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/getpricelistrecordsbyvariantid
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $variant_id
      * @return mixed
@@ -50,6 +56,7 @@ interface Record
      * Returns a Price List Record using the currency code. Optional parameters can be used.
      * GET /pricelists/{price_list_id}/records/{variant_id}/{currency_code}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/getpricelistrecord
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $variant_id
      * @param $currency_code
@@ -61,6 +68,7 @@ interface Record
      * Creates or updates aPrice List Record using the currency code.
      * PUT /pricelists/{price_list_id}/records/{variant_id}/{currency_code}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/setpricelistrecord
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $variant_id
      * @param $currency_code
@@ -73,6 +81,7 @@ interface Record
      * Deletes a Price List Record using the currency code.
      * DELETE /pricelists/{price_list_id}/records/{variant_id}/{currency_code}
      * @see https://developer.bigcommerce.com/api-reference/catalog/pricelists-api/price-lists-records/deletepricelistrecord
+     * @throws GuzzleException
      * @param $price_list_id
      * @param $variant_id
      * @param $currency_code

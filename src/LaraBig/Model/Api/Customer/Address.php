@@ -34,6 +34,7 @@ class Address extends AbstractModel implements IAddress
     public function update($data)
     {
         $result = $this->service()->call('PUT', $this->getResource(), $data);
+        return $result;
     }
 
     /**

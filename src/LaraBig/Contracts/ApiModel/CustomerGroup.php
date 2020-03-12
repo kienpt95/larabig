@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface CustomerGroup
 {
     const PREFIX = "customer_groups";
@@ -12,6 +14,7 @@ interface CustomerGroup
      * Returns a list of Customer Groups. Default sorting is by customer-group id, from lowest to highest.
      * GET /customer_groups
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/customers-api/customer-groups/getallcustomergroups
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -20,6 +23,7 @@ interface CustomerGroup
      * Returns a Customer Group.
      * GET /customer_groups/{customer_group_id}
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/customers-api/customer-groups/getacustomergroup
+     * @throws GuzzleException
      * @param $customer_group_id
      * @return mixed
      */
@@ -29,6 +33,7 @@ interface CustomerGroup
      * Creates a Customer Group.
      * POST /customer_groups
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/customers-api/customer-groups/createacustomergroup
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -38,6 +43,7 @@ interface CustomerGroup
      * Updates a Customer Group.
      * PUT /customer_groups/{customer_group_id}
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/customers-api/customer-groups/updateacustomergroup
+     * @throws GuzzleException
      * @param $customer_group_id
      * @param $data
      * @return mixed
@@ -48,6 +54,7 @@ interface CustomerGroup
      * Deletes a Customer Group.
      * DELETE /customer_groups/{customer_group_id}
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/customers-api/customer-groups/deleteacustomergroup
+     * @throws GuzzleException
      * @param $customer_group_id
      * @return mixed
      */

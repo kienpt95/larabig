@@ -3,6 +3,7 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Coupon;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Message;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\Product;
@@ -32,6 +33,7 @@ interface Order
      * Gets a list of orders using the filter query. (The default sort is by order id, from lowest to highest.
      * GET /orders
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/getallorders
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -40,6 +42,7 @@ interface Order
      * Gets an Order.
      * GET /orders/{order_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/getanorder
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */
@@ -50,6 +53,7 @@ interface Order
      * An order can be created with an existing catalog product or a custom product.
      * POST /orders
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/createanorder
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -59,6 +63,7 @@ interface Order
      * Updates an Order.
      * PUT /orders/{order_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/updateanorder
+     * @throws GuzzleException
      * @param $order_id
      * @param $data
      * @return mixed
@@ -69,6 +74,7 @@ interface Order
      * Archives an order.Any attempt to archive an order on a store with automatic tax enabled will fail, and will return 405 Method not allowed.
      * DELETE /orders/{order_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/deleteanorder
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */
@@ -78,6 +84,7 @@ interface Order
      * Gets an array of orders in the store organized by order status.
      * GET /orders/count
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/orders/getcountorder
+     * @throws GuzzleException
      * @return mixed
      */
     public function count();

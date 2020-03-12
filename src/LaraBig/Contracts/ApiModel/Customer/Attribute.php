@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Customer;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Attribute
 {
     const PREFIX = "attributes";
@@ -12,6 +14,7 @@ interface Attribute
      * Returns a list of Customer Attributes. Optional filter parameters can be passed in.
      * GET /customers/attributes
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attributes/customersattributesget
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -19,6 +22,12 @@ interface Attribute
     /**
      * Creates a Customer Attribute. Multiple customer attributes can be created in one call.
      * POST /customers/attributes
+     * @example $data = [
+                            [
+                                "name"=> "Date UK",
+                                "type"=> "date"
+                            ]
+                        ];
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attributes/customersattributespost
      * @param $data
      * @return mixed
@@ -28,8 +37,14 @@ interface Attribute
     /**
      * Updates a Customer Attribute. Multiple customer attributes can be updated in one call.
      * PUT /customers/attributes
+     * @example $data = [
+                            [
+                                "name"=> "Date UK",
+                                "id" => 2
+                            ]
+                        ];
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attributes/customersattributesput
-     * @param $id_customer_atribute
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -38,8 +53,10 @@ interface Attribute
     /**
      * Deletes Customer Attributes from the store.
      * DELETE /customers/attributes
+     * $ids = [2];
      * @see https://developer.bigcommerce.com/api-reference/customer-subscribers/v3-customers-api/customer-attributes/customersattributesdelete
-     * @param $id_customer_atribute
+     * @throws GuzzleException
+     * @param $ids
      * @return mixed
      */
     public function delete($ids);

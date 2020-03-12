@@ -3,6 +3,7 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Smartosc\LaraBig\Contracts\ApiModel\Order\ShippingAddress\ShippingQuotes;
 
 /**
@@ -20,6 +21,7 @@ interface ShippingAddress
      * Get all shipping addresses on an order using the order_id.
      * GET /orders/{order_id}/shipping_addresses
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipping-addresses/getallshippingaddresses
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */
@@ -30,6 +32,7 @@ interface ShippingAddress
      * Returned in the response is shipping_quotes object. Please use the Get Shipping Quotes Endpoint. Using the response will return a 204 for the shipping quote.
      * GET /orders/{order_id}/shipping_addresses/{id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipping-addresses/getashippingaddress
+     * @throws GuzzleException
      * @param $order_id
      * @param $id
      * @return mixed

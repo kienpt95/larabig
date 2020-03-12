@@ -3,10 +3,10 @@
 namespace Smartosc\LaraBig;
 
 use Smartosc\LaraBig\Contracts\ApiModel\Banner;
+use Smartosc\LaraBig\Contracts\ApiModel\Cart;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog;
 use Smartosc\LaraBig\Contracts\ApiModel\Content;
 use Smartosc\LaraBig\Contracts\ApiModel\Country;
-use Smartosc\LaraBig\Contracts\ApiModel\Country\State;
 use Smartosc\LaraBig\Contracts\ApiModel\Coupon;
 use Smartosc\LaraBig\Contracts\ApiModel\Currency;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer;
@@ -23,6 +23,7 @@ use InvalidArgumentException;
  * @property Coupon coupon
  * @property Currency currency
  * @property Customer customer
+ * @property Cart cart
  */
 class LaraBig
 {

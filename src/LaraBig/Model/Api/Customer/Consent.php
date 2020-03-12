@@ -13,10 +13,10 @@ class Consent extends AbstractModel implements IConsent
     /**
      * @inheritDoc
      */
-    public function get($customerId)
+    public function get($customer_id)
     {
         $result = $this->service()->call('GET', $this->getResource([
-            'customerId' => $customerId
+            'customer_id' => $customer_id
         ]));
         return  $result;
     }
@@ -24,10 +24,10 @@ class Consent extends AbstractModel implements IConsent
     /**
      * @inheritDoc
      */
-    public function update($customerId, $data)
+    public function update($customer_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
-            'customerId' => $customerId
+            'customer_id' => $customer_id
         ]), $data);
         return $result;
     }

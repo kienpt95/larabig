@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Shipping;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Zone
 {
     const PREFIX = "zones";
@@ -12,6 +14,7 @@ interface Zone
      * Returns a list of all Shipping Zones.
      * GET/shipping/zones
      * @see https://developer.bigcommerce.com/api-reference/store-management/shipping-api/shipping-zones/getallshippingzones
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -20,6 +23,7 @@ interface Zone
      * Returns a single Shipping Zone.
      * GET /shipping/zones/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/shipping-api/shipping-zones/getashippingzone
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */
@@ -29,6 +33,7 @@ interface Zone
      * Creates a Shipping Zone.
      * POST /shipping/zones
      * @see https://developer.bigcommerce.com/api-reference/store-management/shipping-api/shipping-zones/createashippingzones
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -38,6 +43,7 @@ interface Zone
      * Updates a Shipping Zone.
      * PUT /shipping/zones/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/shipping-api/shipping-zones/updateashippingzone
+     * @throws GuzzleException
      * @param $id
      * @param $data
      * @return mixed
@@ -48,6 +54,7 @@ interface Zone
      * Deletes a Shipping Zone.
      * DELETE /shipping/zones/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/shipping-api/shipping-zones/deleteashippingzone
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */
