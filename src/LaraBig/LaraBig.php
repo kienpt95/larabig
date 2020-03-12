@@ -2,28 +2,58 @@
 
 namespace Smartosc\LaraBig;
 
+use Smartosc\LaraBig\Contracts\ApiModel\AbandonedCart;
 use Smartosc\LaraBig\Contracts\ApiModel\Banner;
 use Smartosc\LaraBig\Contracts\ApiModel\Cart;
 use Smartosc\LaraBig\Contracts\ApiModel\Catalog;
+use Smartosc\LaraBig\Contracts\ApiModel\Channel;
+use Smartosc\LaraBig\Contracts\ApiModel\Checkout;
 use Smartosc\LaraBig\Contracts\ApiModel\Content;
 use Smartosc\LaraBig\Contracts\ApiModel\Country;
 use Smartosc\LaraBig\Contracts\ApiModel\Coupon;
 use Smartosc\LaraBig\Contracts\ApiModel\Currency;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer;
+use Smartosc\LaraBig\Contracts\ApiModel\CustomerGroup;
+use Smartosc\LaraBig\Contracts\ApiModel\GiftCertificate;
+use Smartosc\LaraBig\Contracts\ApiModel\Order;
+use Smartosc\LaraBig\Contracts\ApiModel\OrderStatus;
+use Smartosc\LaraBig\Contracts\ApiModel\Payment;
+use Smartosc\LaraBig\Contracts\ApiModel\PriceList;
+use Smartosc\LaraBig\Contracts\ApiModel\Shipping;
+use Smartosc\LaraBig\Contracts\ApiModel\Site;
+use Smartosc\LaraBig\Contracts\ApiModel\Theme;
+use Smartosc\LaraBig\Contracts\ApiModel\TimeZone;
+use Smartosc\LaraBig\Contracts\ApiModel\Webhook;
+use Smartosc\LaraBig\Contracts\ApiModel\Wishlist;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface;
 use InvalidArgumentException;
 
 /**
  * Class LaraBig
  * @package Smartosc\LaraBig
- * @property Catalog catalog
- * @property Content content
+ * @property AbandonedCart abandoned_cart
  * @property Banner banner
+ * @property Cart cart
+ * @property Catalog catalog
+ * @property Channel channel
+ * @property Checkout checkout
+ * @property Content content
  * @property Country country
  * @property Coupon coupon
  * @property Currency currency
  * @property Customer customer
- * @property Cart cart
+ * @property CustomerGroup customer_group
+ * @property GiftCertificate gift_certificate
+ * @property Order order
+ * @property OrderStatus order_status
+ * @property Payment payment
+ * @property PriceList pricelist
+ * @property Shipping shipping
+ * @property Site site
+ * @property Theme theme
+ * @property TimeZone timezone
+ * @property Webhook webhook
+ * @property Wishlist wishlist
  */
 class LaraBig
 {

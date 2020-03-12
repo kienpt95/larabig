@@ -10,16 +10,13 @@ use Smartosc\LaraBig\Http\Middleware\XFrameAllowAll;
 
 class LaraBigProvider extends ServiceProvider
 {
-    const PREFIX_API_CONTRACT = 'Smartosc\LaraBig\Contracts\ApiModel';
-    const PREFIX_API_MODEL = 'Smartosc\LaraBig\Model\Api';
-
-    private $routeMiddleware = [
-        'larabig.auth.admin' => ValidatePayload::class,
-        'larabig.auth.webhook' => ValidateWebhook::class,
-        'larabig.x-frame-all' => XFrameAllowAll::class
-    ];
-
     private $_apiModelBind = [
+        'abandoned_cart',
+        'banner',
+        'cart' => [
+            'item',
+            'riedirect_url'
+        ],
         'catalog' => [
             'product' => [
                 'bulk_pricing_rule',
@@ -54,12 +51,21 @@ class LaraBigProvider extends ServiceProvider
             'summary',
             'variant'
         ],
+        'channel' => [
+            'listing',
+            'site'
+        ],
+        'checkout' => [
+            'billing_address',
+            'consignment',
+            'coupon',
+            'order'
+        ],
         'content' => [
             'region',
             'script',
             'widget_template'
         ],
-        'banner',
         'country' => [
             'state'
         ],
@@ -72,9 +78,55 @@ class LaraBigProvider extends ServiceProvider
             'consent',
             'form_field',
         ],
-        'cart' => [
+        'customer_group',
+        'gift_certificate',
+        'order' =>[
+            'coupon',
+            'message',
+            'product',
+            'shippment',
+            'shipping_address' => [
+                'shipping_quotes'
+            ],
+            'tax',
+            'transaction'
+        ],
+        'order_status',
+        'payment' => [
+            'access_token',
+            'method'
+        ],
+        'pricelist' => [
+            'assignment',
+            'record'
+        ],
+        'shipping' => [
+            'carrier' => [
+                'connection'
+            ],
+            'zone' => [
+                'method'
+            ]
+        ],
+        'site' => [
+            'route'
+        ],
+        'theme',
+        'timezone',
+        'webhook',
+        'wishlist' => [
             'item'
         ]
+
+    ];
+    const PREFIX_API_CONTRACT = 'Smartosc\LaraBig\Contracts\ApiModel';
+
+    const PREFIX_API_MODEL = 'Smartosc\LaraBig\Model\Api';
+
+    private $routeMiddleware = [
+        'larabig.auth.admin' => ValidatePayload::class,
+        'larabig.auth.webhook' => ValidateWebhook::class,
+        'larabig.x-frame-all' => XFrameAllowAll::class
     ];
 
     private $_contractBind = [
