@@ -12,6 +12,7 @@ interface Region
      * Returns a list of unique Theme Regions in a file.
      * GET /content/regions
      * @see https://developer.bigcommerce.com/api-reference/storefront/widgets-api/regions/getcontentregions
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();

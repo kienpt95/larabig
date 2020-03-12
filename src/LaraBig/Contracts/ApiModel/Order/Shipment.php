@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Shipment
 {
     const PREFIX = "shipments";
@@ -12,6 +14,7 @@ interface Shipment
      * Gets a list of all shipments on an order.
      * GET /orders/{order_id}/shipments
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/getallordershipments
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */
@@ -21,6 +24,7 @@ interface Shipment
      * Gets an order shipment.
      * GET /orders/{order_id}/shipments/{shipment_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/getordershipment
+     * @throws GuzzleException
      * @param $order_id
      * @param $shipment_id
      * @return mixed
@@ -31,6 +35,7 @@ interface Shipment
      * Gets a count of the number of shipments that have been made for a single order
      * GET /orders/{order_id}/shipments/count
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/getcountshipments
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */
@@ -40,6 +45,7 @@ interface Shipment
      * Creates an Order Shipment.
      * POST /orders/{order_id}/shipments
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/createordershipments
+     * @throws GuzzleException
      * @param $order_id
      * @param $data
      * @return mixed
@@ -50,6 +56,7 @@ interface Shipment
      * Updates an existing shipment associated with an order.
      * PUT /orders/{order_id}/shipments/{shipment_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/updateordershipment
+     * @throws GuzzleException
      * @param $order_id
      * @param $shipment_id
      * @param $data
@@ -61,6 +68,7 @@ interface Shipment
      * Deletes a shipment associated with an order.
      * DELETE /orders/{order_id}/shipments/{shipment_id}
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-shipments/deleteordershipment
+     * @throws GuzzleException
      * @param $order_id
      * @param $shipment_id
      * @return mixed

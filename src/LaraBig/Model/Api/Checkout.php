@@ -8,15 +8,15 @@ use Smartosc\LaraBig\Contracts\ApiModel\Checkout as ICheckout;
 
 class Checkout extends AbstractModel implements ICheckout
 {
-    protected $resource = "checkouts/{checkoutId}";
+    protected $resource = "checkouts/{checkout_id}";
 
     /**
      * @inheritDoc
      */
-    public function get($checkoutId)
+    public function get($checkout_id)
     {
         $result = $this->service()->call('GET', $this->getResource([
-            'checkoutId' => $checkoutId
+            'checkout_id' => $checkout_id
         ]));
         return $result;
     }

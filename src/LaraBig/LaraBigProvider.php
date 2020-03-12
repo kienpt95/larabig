@@ -71,6 +71,9 @@ class LaraBigProvider extends ServiceProvider
             'attribute_value',
             'consent',
             'form_field',
+        ],
+        'cart' => [
+            'item'
         ]
     ];
 

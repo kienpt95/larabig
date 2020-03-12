@@ -21,13 +21,14 @@ interface Cart
 
     /**
      * Returns a stores Cart.
-     * GET /carts/{cartId}
+     * GET /carts/{cart_id}
+     * @example $cart_id = 1;
      * @see https://developer.bigcommerce.com/api-reference/cart-checkout/server-server-cart-api/cart/getacart
      * @throws GuzzleException
-     * @param $cardId
+     * @param $cart_id
      * @return mixed
      */
-    public function get($cardId);
+    public function get($cart_id);
 
     /**
      * Creates a Cart.
@@ -41,22 +42,22 @@ interface Cart
 
     /**
      * Updates a Carts
-     * PUT /carts/{cartId}
+     * PUT /carts/{cart_id}
      * @see https://developer.bigcommerce.com/api-reference/cart-checkout/server-server-cart-api/cart/updateacart
      * @throws GuzzleException
-     * @param $cartId
+     * @param $cart_id
      * @param $data
      * @return mixed
      */
-    public function update($cartId, $data);
+    public function update($cart_id, $data);
 
     /**
      * DELETE a Carts
-     * DELETE /carts/{cartId}
+     * DELETE /carts/{cart_id}
      * @see https://developer.bigcommerce.com/api-reference/cart-checkout/server-server-cart-api/cart/deleteacart
      * @throws GuzzleException
-     * @param $cartId
+     * @param $cart_id
      * @return mixed
      */
-    public function delete($cartId);
+    public function delete($cart_id);
 }

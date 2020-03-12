@@ -9,15 +9,15 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class BillingAddress extends AbstractModel implements IBillingAddress
 {
-    protected $resource = "billing-address/{addressId}";
+    protected $resource = "billing-address/{address_id}";
 
     /**
      * @inheritDoc
      */
-    public function add($checkoutId, $data)
+    public function add($checkout_id, $data)
     {
         $result = $this->service()->call('POST', $this->getResource([
-            'checkoutId' => $checkoutId
+            'checkout_id' => $checkout_id
         ]), $data);
         return $result;
     }
@@ -25,11 +25,11 @@ class BillingAddress extends AbstractModel implements IBillingAddress
     /**
      * @inheritDoc
      */
-    public function update($checkoutId, $addressId, $data)
+    public function update($checkout_id, $address_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
-            'checkoutId' => $checkoutId,
-            'addressId' => $addressId
+            'checkout_id' => $checkout_id,
+            'address_id' => $address_id
         ]), $data);
         return $result;
     }

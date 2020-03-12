@@ -45,7 +45,7 @@ namespace Smartosc\LaraBig\Model\Api\Catalog;
          $result = $this->service()->call('PUT', $this->getResource([
              'category_id' => $category_id
          ]), $data);
-         return $data;
+         return $result;
      }
 
      /**

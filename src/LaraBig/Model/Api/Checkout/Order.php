@@ -14,10 +14,10 @@ class Order extends AbstractModel implements IOrder
     /**
      * @inheritDoc
      */
-    public function create($checkoutId, $data)
+    public function create($checkout_id, $data)
     {
         $result = $this->service()->call('POST', $this->getResource([
-            'checkoutId' => $checkoutId
+            'checkout_id' => $checkout_id
         ]), $data);
         return $result;
     }

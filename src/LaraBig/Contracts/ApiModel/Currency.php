@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Currency
 {
     const PREFIX = "currencies";
@@ -12,6 +14,7 @@ interface Currency
      * Returns a list of all store Currency.
      * GET /currencies
      * @see https://developer.bigcommerce.com/api-reference/store-management/currency-api/currencies/getcurrencies
+     * @throws GuzzleException
      * @return mixed
      */
     public function all();
@@ -20,6 +23,7 @@ interface Currency
      * Returns a single Currency.
      * GET /currencies/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/currency-api/currencies/getacurrency
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */
@@ -29,6 +33,7 @@ interface Currency
      * Creates Currency.
      * POST /currencies
      * @see https://developer.bigcommerce.com/api-reference/store-management/currency-api/currencies/postcurrencies
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */
@@ -38,6 +43,7 @@ interface Currency
      * Updates a Currency.
      * PUT /currencies/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/currency-api/currencies/updateacurrency
+     * @throws GuzzleException
      * @param $id
      * @param $data
      * @return mixed
@@ -48,6 +54,7 @@ interface Currency
      * Deletes a Currency.
      * DELETE /currencies/{id}
      * @see https://developer.bigcommerce.com/api-reference/store-management/currency-api/currencies/deleteacurrency
+     * @throws GuzzleException
      * @param $id
      * @return mixed
      */

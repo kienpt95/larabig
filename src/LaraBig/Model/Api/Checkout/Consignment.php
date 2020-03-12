@@ -9,7 +9,7 @@ use Smartosc\LaraBig\Model\Api\AbstractModel;
 
 class Consignment extends AbstractModel implements IConsignment
 {
-    protected $resource = "consignments/{consignmentId}";
+    protected $resource = "consignments/{consignmen_id}";
 
     /**
      * @inheritDoc
@@ -25,11 +25,11 @@ class Consignment extends AbstractModel implements IConsignment
     /**
      * @inheritDoc
      */
-    public function update($checkoutId, $consignmentId, $data)
+    public function update($checkoutId, $consignmen_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
             'checkoutId' => $checkoutId,
-            'consignmentId' => $consignmentId
+            'consignmen_id' => $consignmen_id
         ]), $data);
         return $result;
     }
@@ -37,11 +37,11 @@ class Consignment extends AbstractModel implements IConsignment
     /**
      * @inheritDoc
      */
-    public function delete($checkoutId, $consignmentId)
+    public function delete($checkoutId, $consignmen_id)
     {
         $result = $this->service()->call('DELETE', $this->getResource([
-            'checkoutId' => $checkoutId,
-            'consignmentId' => $consignmentId
+            'checkoutId' => $checkout_id,
+            'consignmen_id' => $consignmen_id
         ]));
         return $result;
     }

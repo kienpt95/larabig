@@ -13,7 +13,7 @@ class FormField extends AbstractModel implements IFormField
     /**
      * @inheritDoc
      */
-    public function get()
+    public function all()
     {
         $result = $this->service()->call('GET', $this->getResource());
         return $result;

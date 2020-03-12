@@ -53,7 +53,7 @@ abstract class AbstractModel
             $regex = "/\{$key\}/";
             $resource = preg_replace($regex, $value, $resource);
         }
-        $resource = preg_replace('/\/{+[a-z_]+}/', '', $resource);
+        $resource = preg_replace('/\/{+[a-zA-Z_]+}/', '', $resource);
         $resource = str_replace("//", "/", $resource);
         return $resource;
     }

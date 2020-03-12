@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Payment;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface AccessToken
 {
     const PREFIX = "access_tokens";
@@ -13,6 +15,7 @@ interface AccessToken
      * After the token is created then use the token to Process Payments.
      * POST /payments/access_tokens
      * @see https://developer.bigcommerce.com/api-reference/store-management/payment-methods/payment-access-token/paymentsaccesstokenspost
+     * @throws GuzzleException
      * @param $data
      * @return mixed
      */

@@ -14,10 +14,10 @@ class Coupon extends AbstractModel implements ICoupon
     /**
      * @inheritDoc
      */
-    public function add($checkoutId, $data)
+    public function add($checkout_id, $data)
     {
         $result = $this->service()->call('POST', $this->getResource([
-            'checkoutId' => $checkoutId
+            'checkout_id' => $checkout_id
         ]), $data);
         return $result;
     }
@@ -25,10 +25,10 @@ class Coupon extends AbstractModel implements ICoupon
     /**
      * @inheritDoc
      */
-    public function delete($checkoutId, $couponCode)
+    public function delete($checkout_id, $couponCode)
     {
         $result = $this->service()->call('DELETE', $this->getResource([
-            'checkoutId' => $checkoutId,
+            'checkout_id' => $checkout_id,
             'couponCode' => $couponCode
         ]));
         return $result;

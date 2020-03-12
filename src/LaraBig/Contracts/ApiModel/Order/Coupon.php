@@ -3,6 +3,8 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel\Order;
 
+use GuzzleHttp\Exception\GuzzleException;
+
 interface Coupon
 {
     const PREFIX = "coupons";
@@ -11,6 +13,7 @@ interface Coupon
      * Lists all order coupons. Optional parameters can be passed in.
      * GET /orders/{order_id}/coupons
      * @see https://developer.bigcommerce.com/api-reference/orders/orders-api/order-coupons/getallordercoupons
+     * @throws GuzzleException
      * @param $order_id
      * @return mixed
      */

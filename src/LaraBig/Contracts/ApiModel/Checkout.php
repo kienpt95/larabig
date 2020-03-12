@@ -16,8 +16,8 @@ interface Checkout
      * GET/checkouts/{checkoutId}
      * @see https://developer.bigcommerce.com/api-reference/cart-checkout/server-server-checkout-api/checkout/checkoutsbycheckoutidget
      * @throws GuzzleException
-     * @param $checkoutId
+     * @param $checkout_id
      * @return mixed
      */
-    public function get($checkoutId);
+    public function get($checkout_id);
 }
