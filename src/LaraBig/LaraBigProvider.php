@@ -12,10 +12,10 @@ class LaraBigProvider extends ServiceProvider
 {
     private $_apiModelBind = [
         'abandoned_cart',
-        'banner',
+        'banner', #tested
         'cart' => [
             'item',
-            'riedirect_url'
+            'redirect_url'
         ],
         'catalog' => [
             'product' => [
@@ -35,7 +35,7 @@ class LaraBigProvider extends ServiceProvider
                 'review',
                 'variant' => [
                     'image',
-                    'metefield'
+                    'metafield'
                 ],
                 'video'
             ],

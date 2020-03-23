@@ -82,6 +82,16 @@ interface Banner
      * @return mixed
      */
     public function delete($id);
+
+    /**
+     * Delete a Banner
+     * DELETE /banners
+     * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/deleteallbanners
+     * @throws GuzzleException
+     * @return mixed
+     */
+    public function deleteAll();
+
     /**
      * Returns a count of Banners.
      * GET /banners/count

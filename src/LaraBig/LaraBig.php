@@ -138,7 +138,7 @@ class LaraBig
     {
         $uri = config('larabig.api_url') . '/stores/'  . $this->getStore()->getStoreHash() . '/' . $resource;
 
-        if (($method == 'GET') && strpos($resource, 'v2') !== false) {
+        if (strpos($resource, 'v2') !== false) {
             $uri .= '.json';
         }
         return $uri;
