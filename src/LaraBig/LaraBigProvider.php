@@ -18,14 +18,14 @@ class LaraBigProvider extends ServiceProvider
             'redirect_url'
         ],
         'catalog' => [
-            'product' => [
+            'product' => [ #tested
                 'bulk_pricing_rule',
                 'complex_rule',
-                'custom_field',
-                'image',
+                'custom_field', #tested
+                'image', #tested
                 'meta_field',
-                'modifier' =>[
-                    'value' => [
+                'modifier' =>[ #tested
+                    'value' => [ #tested
                         'image'
                     ]
                 ],
