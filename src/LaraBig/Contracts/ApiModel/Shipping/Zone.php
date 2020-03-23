@@ -4,7 +4,13 @@
 namespace Smartosc\LaraBig\Contracts\ApiModel\Shipping;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Contracts\ApiModel\Shipping\Zone\Method;
 
+/**
+ * Interface Zone
+ * @package Smartosc\LaraBig\Contracts\ApiModel\Shipping
+ * @property Method method
+ */
 interface Zone
 {
     const PREFIX = "zones";

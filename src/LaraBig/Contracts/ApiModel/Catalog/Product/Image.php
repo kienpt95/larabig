@@ -75,6 +75,7 @@ interface Image
      * @param $product_id
      * @param $image_id
      * @return mixed
+     * @throws GuzzleException
      */
     public function delete($product_id, $image_id);
 }

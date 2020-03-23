@@ -5,7 +5,13 @@ namespace Smartosc\LaraBig\Contracts\ApiModel;
 
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Contracts\ApiModel\Site\Route;
 
+/**
+ * Interface Site
+ * @package Smartosc\LaraBig\Contracts\ApiModel
+ * @property Route route
+ */
 interface Site
 {
     const PREFIX = "sites";

@@ -3,6 +3,7 @@
 
 namespace Smartosc\LaraBig\Model\Api;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Smartosc\LaraBig\Contracts\ApiModel\Banner as BannerInterface;
 
 class Banner extends AbstractModel implements BannerInterface
@@ -63,6 +64,19 @@ class Banner extends AbstractModel implements BannerInterface
     {
         $resource = $this->getResource([], 'v2').'/count';
         $result = $this->service()->call('GET', $resource);
+        return $result;
+    }
+
+    /**
+     * Delete a Banner
+     * DELETE /banners
+     * @see https://developer.bigcommerce.com/api-reference/store-management/marketing/banners/deleteallbanners
+     * @throws GuzzleException
+     * @return mixed
+     */
+    public function deleteAll()
+    {
+        $result = $this->service()->call('DELETE', $this->getResource([], 'v2'));
         return $result;
     }
 }

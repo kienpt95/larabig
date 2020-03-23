@@ -5,7 +5,15 @@ namespace Smartosc\LaraBig\Contracts\ApiModel;
 
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Contracts\ApiModel\Channel\Listing;
+use Smartosc\LaraBig\Contracts\ApiModel\Channel\Site;
 
+/**
+ * Interface Channel
+ * @package Smartosc\LaraBig\Contracts\ApiModel
+ * @property Listing listing
+ * @property Site site
+ */
 interface Channel
 {
     const PREFIX = "channels";

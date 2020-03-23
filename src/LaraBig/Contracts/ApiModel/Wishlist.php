@@ -5,7 +5,13 @@ namespace Smartosc\LaraBig\Contracts\ApiModel;
 
 
 use GuzzleHttp\Exception\GuzzleException;
+use Smartosc\LaraBig\Contracts\ApiModel\Wishlist\Item;
 
+/**
+ * Interface Wishlist
+ * @package Smartosc\LaraBig\Contracts\ApiModel
+ * @property Item item
+ */
 interface Wishlist
 {
     const PREFIX = "wishlists";

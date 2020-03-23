@@ -2,6 +2,7 @@
 
 namespace Smartosc\LaraBig\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use Smartosc\LaraBig\Exceptions\AppInstallException;
 use Smartosc\LaraBig\Contracts\BackendModel\StoreInterface as StoreModelInterface;
 use Smartosc\LaraBig\Contracts\Repository\StoreRepositoryInterface;
@@ -119,8 +120,10 @@ class LaraBigController
         }
     }
 
-    public function removeUser()
+    public function removeUser(Request $request)
     {
+        #remove User only trigger on Listed App
+        Log::info(json_encode($request->all()));
     }
 
     public function logout()
