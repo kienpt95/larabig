@@ -3,7 +3,7 @@ BigCommerce Library integration with Laravel
 This package make easy way to quickly build new Big Commerce App with Laravel.
 
 ### Install
-- Require package: ``composer require smartosc\larabig``
+- Require package: ``composer require smartosc/larabig``
 - Migrate database: ``php artisan migrate``
 
 ### Uses:
