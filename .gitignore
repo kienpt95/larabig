@@ -2,6 +2,8 @@ vendor/
 composer.lock
 bin/*
 .php_cs.cache
+.phpunit.result.cache
+build/
 
 # IDE and editor specific files #
 #################################
