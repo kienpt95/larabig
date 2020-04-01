@@ -77,6 +77,7 @@ class LaraBigProvider extends ServiceProvider
             'attribute_value',
             'consent',
             'form_field',
+            'subscriber'
         ],
         'customer_group',
         'gift_certificate',

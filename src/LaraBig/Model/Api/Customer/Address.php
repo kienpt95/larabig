@@ -24,7 +24,7 @@ class Address extends AbstractModel implements IAddress
      */
     public function create($data)
     {
-        $result = $this->service()->call('GET', $this->getResource(), $data);
+        $result = $this->service()->call('POST', $this->getResource(), $data);
         return $result;
     }
 

@@ -9,6 +9,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Customer\Attribute;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\AttributeValue;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\Consent;
 use Smartosc\LaraBig\Contracts\ApiModel\Customer\FormField;
+use Smartosc\LaraBig\Contracts\ApiModel\Customer\Subscriber;
 
 /**
  * Interface Customer
@@ -18,7 +19,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Customer\FormField;
  * @property AttributeValue attribute_value
  * @property Consent consent
  * @property FormField form_field
- *
+ * @property Subscriber subscriber
  */
 interface Customer
 {

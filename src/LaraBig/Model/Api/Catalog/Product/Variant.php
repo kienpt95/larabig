@@ -61,7 +61,7 @@ class Variant extends AbstractModel implements VariantInterface
      */
     public function delete($product_id, $variant_id)
     {
-        $result = $this->resource->call('DELETE', $this->getResource([
+        $result = $this->service()->call('DELETE', $this->getResource([
             'product_id' => $product_id,
             'variant_id' => $variant_id
         ]));
