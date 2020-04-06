@@ -48,7 +48,6 @@ class LaraBigProvider extends ServiceProvider
                 'meta_field',
                 'tree'
             ],
-            'summary',
             'variant'
         ],
         'channel' => [
