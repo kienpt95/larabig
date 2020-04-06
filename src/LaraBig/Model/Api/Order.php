@@ -44,8 +44,9 @@ class Order extends AbstractModel implements IOrder
     public function update($order_id, $data)
     {
         $result = $this->service()->call('PUT', $this->getResource([
-            'order_id' =>$order_id
-        ], 'v2'));
+            'order_id' => $order_id
+        ], 'v2'), $data);
+        return $result;
     }
 
     /**
