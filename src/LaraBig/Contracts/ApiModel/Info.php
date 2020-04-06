@@ -2,7 +2,7 @@
 
 namespace Smartosc\LaraBig\Contracts\ApiModel;
 
-interface Store
+interface Info
 {
-    public function getInformation();
+    public function get();
 }

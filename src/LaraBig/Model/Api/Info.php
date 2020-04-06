@@ -2,12 +2,12 @@
 
 namespace Smartosc\LaraBig\Model\Api;
 
-class Store extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiModel\Store
+class Info extends AbstractModel implements \Smartosc\LaraBig\Contracts\ApiModel\Info
 {
     protected $resource = "store";
 
     /** @inheritDoc */
-    public function getInformation()
+    public function get()
     {
         $result = $this->service()->call('GET', $this->getResource([], 'v2'));
         return $result;
