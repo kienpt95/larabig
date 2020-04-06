@@ -55,6 +55,7 @@ abstract class AbstractModel
         }
         $resource = preg_replace('/\/{+[a-zA-Z_]+}/', '', $resource);
         $resource = str_replace("//", "/", $resource);
+        $resource = rtrim($resource, '/');
         return $resource;
     }
 
