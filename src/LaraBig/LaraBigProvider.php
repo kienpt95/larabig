@@ -117,7 +117,7 @@ class LaraBigProvider extends ServiceProvider
         'wishlist' => [
             'item'
         ],
-        'store',
+        'info',
     ];
     const PREFIX_API_CONTRACT = 'Smartosc\LaraBig\Contracts\ApiModel';
 
