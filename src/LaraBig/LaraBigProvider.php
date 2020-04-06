@@ -116,8 +116,8 @@ class LaraBigProvider extends ServiceProvider
         'webhook',
         'wishlist' => [
             'item'
-        ]
-
+        ],
+        'store',
     ];
     const PREFIX_API_CONTRACT = 'Smartosc\LaraBig\Contracts\ApiModel';
 
