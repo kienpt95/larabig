@@ -15,7 +15,7 @@ class Zone extends AbstractModel implements IZone
      */
     public function all()
     {
-        $result = $this->service()->call('GET', $this->getResource());
+        $result = $this->service()->call('GET', $this->getResource([], 'v2'));
         return $result;
     }
 
@@ -26,7 +26,7 @@ class Zone extends AbstractModel implements IZone
     {
         $result = $this->service()->call('GET',  $this->getResource([
             'zone_id' => $zone_id
-        ]));
+        ], 'v2'));
         return $result;
     }
 
@@ -35,7 +35,7 @@ class Zone extends AbstractModel implements IZone
      */
     public function create($data)
     {
-        $result = $this->service()->call('POST', $this->getResource(), $data);
+        $result = $this->service()->call('POST', $this->getResource([], 'v2'), $data);
         return $result;
     }
 
@@ -46,7 +46,7 @@ class Zone extends AbstractModel implements IZone
     {
         $result = $this->service()->call('PUT', $this->getResource([
             'zone_id' => $zone_id
-        ]), $data);
+        ], 'v2'), $data);
         return $result;
     }
 
@@ -57,7 +57,7 @@ class Zone extends AbstractModel implements IZone
     {
         $result = $this->service()->call('DELETE', $this->getResource([
             'zone_id' => $zone_id
-        ]));
+        ], 'v2'));
         return $result;
     }
 }

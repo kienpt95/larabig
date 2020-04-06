@@ -13,7 +13,7 @@ class OrderStatus extends AbstractModel implements IOrderStatus
      */
     public function all()
     {
-        $result = $this->service()->call('GET', $this->getResource());
+        $result = $this->service()->call('GET', $this->getResource([], 'v2'));
         return $result;
     }
 
@@ -24,7 +24,7 @@ class OrderStatus extends AbstractModel implements IOrderStatus
     {
         $result = $this->service()->call('GET', $this->getResource([
             'status_id' => $status_id
-        ]));
+        ], 'v2'));
         return $result;
     }
 }
