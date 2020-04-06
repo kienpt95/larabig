@@ -68,7 +68,7 @@ interface Order
      * @param $data
      * @return mixed
      */
-    public function updateOrder($order_id, $data);
+    public function update($order_id, $data);
 
     /**
      * Archives an order.Any attempt to archive an order on a store with automatic tax enabled will fail, and will return 405 Method not allowed.

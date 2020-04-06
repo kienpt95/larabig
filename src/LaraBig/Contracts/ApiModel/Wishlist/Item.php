@@ -14,7 +14,7 @@ interface Item
     /**
      * Adds a Wishlist Item. More than one item can be added at a time.
      * POST /wishlists/{wishlist_id}/items
-     * @see https://developer.bigcommerce.com/api-reference/cart-checkout/wishlists/wishlists/wishlistsitemsbyidpost
+     * @see https://developer.bigcommerce.com/api-reference/cart-checkout/wishlists/wishlists-items/wishlistsitemsbyidpost
      * @throws GuzzleException
      * @param $wishlist_id
      * @param $data
@@ -24,7 +24,7 @@ interface Item
     /**
      * Deletes a Wishlist Item.
      * DELETE /wishlists/{wishlist_id}/items/{item_id}
-     * @see https://developer.bigcommerce.com/api-reference/cart-checkout/wishlists/wishlists/wishlistsitemsbyiddelete
+     * @see https://developer.bigcommerce.com/api-reference/cart-checkout/wishlists/wishlists-items/wishlistsitemsbyiddelete
      * @throws GuzzleException
      * @param $wishlist_id
      * @param $item_id

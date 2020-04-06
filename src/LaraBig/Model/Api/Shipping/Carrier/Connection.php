@@ -14,7 +14,8 @@ class Connection extends AbstractModel implements IConnection
      */
     public function create($data)
     {
-        // TODO: Implement create() method.
+        $result = $this->service()->call('POST', $this->getResource([], 'v2'), $data);
+        return $result;
     }
 
     /**
@@ -22,7 +23,8 @@ class Connection extends AbstractModel implements IConnection
      */
     public function update($data)
     {
-        // TODO: Implement update() method.
+        $result = $this->service()->call('PUT', $this->getResource([], 'v2'), $data);
+        return $result;
     }
 
     /**
@@ -30,6 +32,9 @@ class Connection extends AbstractModel implements IConnection
      */
     public function delete($carrier_id)
     {
-        // TODO: Implement delete() method.
+        $result = $this->service()->call('DELETE', $this->getResource([
+            'carrier_id' => $carrier_id
+        ], 'v2'));
+        return $result;
     }
 }

@@ -17,7 +17,7 @@ class Coupon extends AbstractModel implements ICouponuse
     {
         $resource = $this->getResource([
             'order_id' => $order_id
-        ]);
+        ], 'v2');
         $result = $this->service()->call('GET', $resource);
         return $result;
     }
