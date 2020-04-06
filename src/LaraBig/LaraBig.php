@@ -21,6 +21,7 @@ use Smartosc\LaraBig\Contracts\ApiModel\Payment;
 use Smartosc\LaraBig\Contracts\ApiModel\PriceList;
 use Smartosc\LaraBig\Contracts\ApiModel\Shipping;
 use Smartosc\LaraBig\Contracts\ApiModel\Site;
+use Smartosc\LaraBig\Contracts\ApiModel\Store;
 use Smartosc\LaraBig\Contracts\ApiModel\Theme;
 use Smartosc\LaraBig\Contracts\ApiModel\TimeZone;
 use Smartosc\LaraBig\Contracts\ApiModel\Webhook;
@@ -54,6 +55,7 @@ use InvalidArgumentException;
  * @property TimeZone timezone
  * @property Webhook webhook
  * @property Wishlist wishlist
+ * @property Store store
  */
 class LaraBig
 {
